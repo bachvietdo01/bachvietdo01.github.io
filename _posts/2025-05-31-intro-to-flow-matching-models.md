@@ -13,5 +13,6 @@ Flow Matching is a powerful class of generative models behind systems like Stabl
 
 
 ![VectorFieldFLow](https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/vf_flow.gif?raw=true)
+*Vector field $v_t(x)$ (black) generates a flow \psi_t(x) (red)*
 
 
