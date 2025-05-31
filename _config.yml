@@ -21,7 +21,7 @@ plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-t
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           'Lagrange'
-description:	       'a minimalist Jekyll theme'
+description:	       'a random walk into the realm of modern Statistical ML'
 author:              'Bach Do'
 url:                 'https://bachvietdo01.github.io/'
 
