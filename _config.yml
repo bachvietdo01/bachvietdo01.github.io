@@ -20,9 +20,10 @@ permalink:           /:title
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           'Lagrange'
-description:	       'a minimalist Jekyll theme'
-author:              'Paul Le'
+title:		           'Bach Do'
+description:	       'a random walk into the realm of modern Statistical ML'
+author:              'Bach Do'
+url:                 'https://bachvietdo01.github.io/'
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:
