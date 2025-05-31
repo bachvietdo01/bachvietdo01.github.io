@@ -13,5 +13,5 @@ Flow Matching is a powerful class of generative models behind systems like Stabl
 
 ![VectorFieldFLow](https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/vf_flow.gif?raw=true)
 <br>
-<p align=center>*Vector field in black generates flows in red*</p>
+*Vector field in black generates flows in red*
 
