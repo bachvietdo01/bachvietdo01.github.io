@@ -51,11 +51,11 @@ By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0
 
 For this conditional path to be the solution of  $\cfrac{d}{dt} \tilde{X}_t = u_t( | z)$$, then 
 
-$
-\begin{algin}
+$$
+\begin{align}
 u_t( |z) = \left(\dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right)z + \cfrac{\dot \beta_t}{\beta_t} \right) + \cfrac{\dot \beta_t}{\beta_t} x &
 \end{align}
-$ 
+$$
 
 Now, to generate probability path $p_t(\cdot)$ that converges to $p_{\text{data}}(\cdot), the **key trick** is to define u^{\target}_t(x) = \bigint u_t(x | z) \cfrac{p(x | z) p(x)}{p(x)} dz$.
 
