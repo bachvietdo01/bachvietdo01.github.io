@@ -29,5 +29,5 @@ Intuitively, the vector field $u_t(x)$ generates flows, as for a small $h$, the 
 
 ## Gaussian Probability Path
 
-Given a data sample $z_1, \ldots, z_n \sim p_{\text{data}}(\cdot)$, Flow Matching model wants to build the probablity path $p_t(\cdot)$ such that $X_0 \sim p_{\text{init}}(\cdot), \ldots, X_t \sim p_t(\cdot), \lodts, X_1 \sim p_{\text{data}(\cdot)}. However, it turns out to be highly challenging to construct such a path directly from the marginal $p_{\text{data}}$. Lipmain proposed to first construct a conditional path $p(x | z)$.
+To reiterate, given a data sample $z_1, \ldots, z_n \sim p_{\text{data}}(\cdot)$, the Flow Matching model aims to construct a probability path $p_t(\cdot)$ such that $X_0 \sim p_{\text{init}}(\cdot), \ldots, X_t \sim p_t(\cdot), \ldots, X_1 \sim p_{\text{data}}(\cdot)$. However, directly building this path from the marginal $p_{\text{data}}$ is highly challenging. To address this, Lipman proposed first constructing a conditional path $p(x \mid z)$.
 
