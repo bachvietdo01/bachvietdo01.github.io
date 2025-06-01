@@ -49,7 +49,7 @@ By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0
 <em>Gaussian Conditionn path converges to data point z as time t goes to 1</em>
 </p>
 
-For this conditional path to be the solution of  $\cfrac{d}{dt} \tilde{X}_t = u_t( | z)$$, then 
+For this conditional path to be the solution of  $\frac{d}{dt} \tilde{X}_t = u_t( | z)$$, then 
 
 $$
 \begin{align}
@@ -57,5 +57,5 @@ u_t( |z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \righ
 \end{align}
 $$
 
-Now, to generate probability path $p_t(\cdot)$ that converges to $p_{\text{data}}(\cdot), the **key trick** is to define u^{\target}_t(x) = \bigint u_t(x | z) \cfrac{p(x | z) p(x)}{p(x)} dz$.
+Now, to generate probability path $p_t(\cdot)$ that converges to $p_{\text{data}}(\cdot)$, the **key trick** is to define $u^{\target}_t(x) = \bigint u_t(x | z) \cfrac{p(x | z) p(x)}{p(x)} dz$.
 
