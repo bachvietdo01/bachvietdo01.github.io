@@ -18,7 +18,7 @@ $$\begin{flalign}
 \label{eq:test}
 \end{flalign}$$  
 
-where $u_t(x)$ is the vector field for location $x$ at time $t$. Formally, the solution to ODE $(1)$ is called flows, with each flow corresponding to a different initial point.
+where $u_t(x)$ is the vector field for location $x$ at time $t$. Formally, the solution to ODE $\eqref{eq:test}$ is called flows, with each flow corresponding to a different initial point.
 
 ![VectorFieldFLow](https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/vf_flow.gif?raw=true)
 <br>
