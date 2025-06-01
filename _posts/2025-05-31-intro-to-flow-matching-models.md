@@ -49,7 +49,7 @@ By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0
 <em>Gaussian Conditionn path converges to data point z as time t goes to 1</em>
 </p>
 
-For this conditional path to be the solution of  $\frac{d}{dt} \tilde{X}_t = u_t( | z)$$, then 
+For $X_t$ to be the solution of $\frac{d}{dt} \tilde{X}_t = u_t( | z)$$, it is true that
 
 $$
 \begin{align}
