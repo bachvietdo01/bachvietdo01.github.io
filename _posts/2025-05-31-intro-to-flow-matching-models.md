@@ -13,10 +13,9 @@ image: mountains.jpg
 
 The key idea is to construct a probability flow — a path $X_0, \ldots, X_t, \ldots, X_1$ over time index $t \in [0, 1]$ — where  $X_0$ is sampled from an initial distribution $p_{\text{init}}$ and $X_1$ comes from the target distribution $p_{\text{data}}(\cdot)$.  This path is a solution to the following ODE (Ordinary Differential Equation), 
 
-$$\begin{aligned} 
-\cfrac{d}{dt} X_t(x) = u_t(x)&
-\label{eq:ode}
-\end{aligned}$$  
+$$\begin{align} 
+\cfrac{d}{dt} X_t(x) = u_t(x)  \label{eqn:ode}\tag{1}  &
+\end{align}$$  
 
 where $u_t(x)$ is the vector field for location $x$ at time $t$. Formally, the solution to ODE $\ref{eq:ode}$ is called flows, with each flow corresponding to a different initial point.
 
