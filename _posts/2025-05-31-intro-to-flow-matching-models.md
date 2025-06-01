@@ -13,5 +13,5 @@ image: mountains.jpg
 
 ![VectorFieldFLow](https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/vf_flow.gif?raw=true)
 <br>
-*Vector field in black generates flows in red*
+*Vector field in black generates flows in red. Image Credit: David Jeffery at UNLV*
 
