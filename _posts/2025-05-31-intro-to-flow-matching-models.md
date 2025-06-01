@@ -49,6 +49,6 @@ By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0
 <em>Gaussian Conditionn path converges to data point z as time t goes to 1</em>
 </p>
 
-In addition, we can write $X_t = \alpha_t z + \beta_t X_0$ and $X_0 \sim N(\cdot | 0, I)$. For $X_t$ to be the solution of $\frac{d}{dt} X_t = u_t(X_t | z)$, it is true that
+In addition, we can write $X_t = \alpha_t z + \beta_t X_0$ and $X_0 \sim N(\cdot | 0, I)$. For $X_t$ to be the solution of $\frac{d}{dt} X_t = u_t(X_t | z)$, it is true
 
 
