@@ -56,7 +56,9 @@ u_t( |z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \righ
 \end{align}
 $$
 
-where $\dot alpha = \frac{d}{dt} \alpha_t$ and $\dot \beta_t = \frac{d}{dt} \beta_t$. Now, to generate probability path $p_t(\cdot)$ that converges to $p_{\text{data}}(\cdot)$, the **key trick** is to define 
+where $\dot \alpha_t = \frac{d}{dt} \alpha_t$ and $\dot \beta_t = \frac{d}{dt} \beta_t$. 
+
+Now, to generate probability path $p_t(\cdot)$ that converges to $p_{\text{data}}(\cdot)$, the **key trick** is to define 
 
 $$
 \begin{align}
