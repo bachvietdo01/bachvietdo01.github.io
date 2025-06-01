@@ -58,11 +58,13 @@ $$
 
 where $\dot \alpha_t = \frac{d}{dt} \alpha_t$ and $\dot \beta_t = \frac{d}{dt} \beta_t$. 
 
-Now, to generate marginal probability path $p_t$ that converges to $p_{\text{data}}$, the **key trick** is to define 
+With ths result, if we define
 
 $$
 \begin{align}
 u^{\text{target}}_t(x) := \int u_t(x | z) \cfrac{p(x | z) p(x)}{p(x)} dz.
 \end{align}
 $$
+
+The flow solution to $\frac{d}{dt} X_t = u^{\text{target}}_t(X_t)$ can be show to be the probability path $X_0, \ldots, X_t, \ldots X_1$ where $X_1 \sim p_{\text{data}}$. This key result is also known as Continuity Equation and a special case Fokker–Planck equation. The proof can be found in Theorem 1 in Lipmain et al, 2023.
 
