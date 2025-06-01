@@ -34,12 +34,6 @@ Intuitively, the vector field $u_t(x)$ generates flows, as for a small $h$, the 
 
 To reiterate, given a data sample $z_1, \ldots, z_n \sim p_{\text{data}}(\cdot)$, the Flow Matching model aims to construct a probability path $p_t(\cdot)$ such that $X_0 \sim p_{\text{init}}(\cdot), \ldots, X_t \sim p_t(\cdot), \ldots, X_1 \sim p_{\text{data}}(\cdot)$. However, directly building this path from the marginal $p_{\text{data}}$ is highly challenging. To address this, Lipman proposed first constructing a Gaussian conditional path $p_t(x \mid z)$,
 
-$$
-\begin{align}
-p_t( x | z) = N(x | \alpha_t z, \quad \beta_t^2 \cdot I)&
-\end{align}
-$$
-
 where the nosie scheduler $\alpha_t = t$ and $\beta_t^2 = 1 -t$ and data point $z \sim p_{\text{data}}(\cdot)$.
 
 By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0, I)$ and $p_1(\cdot) = \delta_z$. In other words, the conditional probability path $p_t(\cdot | z)$ starts from $p_\text{init}$ and converges to the data point $z$ as $t \to 1$.
