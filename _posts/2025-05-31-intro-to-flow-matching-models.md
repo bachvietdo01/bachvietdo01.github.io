@@ -1,4 +1,4 @@
----
+![image](https://github.com/user-attachments/assets/832d38c5-c26a-4381-9cb8-4d4d97dae878)---
 layout: post
 title: "Flow Matching: A Gentle Intro to Flow Matching Models"
 author: "Bach Do"
@@ -39,3 +39,7 @@ $$
 where the nosie scheduler $\alpha_t = t$ and $\beta_t^2 = 1 -t$ and data point $z \sim p_{\text{data}}(\cdot)$.
 
 By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0, I)$ and $p_1(\cdot) = \delta_z$. In other words, the conditional probability path $p_t(\cdot | z)$ starts from $p_\text{init}$ and converges to the data point $z$ as $t \to 1$.
+
+![a1_gcp](https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_gcp.png?raw=true)
+<br>
+*Gaussian Conditionn path converges to data point z as time t goes to 1*
