@@ -53,7 +53,7 @@ For this conditional path to be the solution of  $\cfrac{d}{dt} \tilde{X}_t = u_
 
 $$
 \begin{align}
-u_t( |z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \cfrac{\dot \beta_t}{\beta_t} \right) + \cfrac{\dot \beta_t}{\beta_t} x &
+u_t( |z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \cfrac{\dot \beta_t}{\beta_t} x &
 \end{align}
 $$
 
