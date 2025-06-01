@@ -17,7 +17,7 @@ $$\begin{flalign}
 \cfrac{d}{dt} X_t(x) = u_t(x) \label{eq:ode} &
 \end{flalign}$$  
 
-where $u_t(x)$ is the vector field for location $x$ at time $t$. Formally, the solution to ODE $\eqref{eq:ode}$ is called flows, with each flow corresponding to a different initial point.
+where $u_t(x)$ is the vector field for location $x$ at time $t$. Formally, the solution to ODE $\ref{eq:ode}$ is called flows, with each flow corresponding to a different initial point.
 
 ![VectorFieldFLow](https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/vf_flow.gif?raw=true)
 <br>
