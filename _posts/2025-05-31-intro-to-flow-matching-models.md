@@ -25,7 +25,9 @@ where $u_t(x)$ is the vector field and $X_t(x)$ a trajectory for location $x$ at
 <br>
 *Vector field in black generates flows in red. Image Credit: David Jeffery at UNLV*
 
-Intuitively, the vector field $u_t(x)$ generates flows, as for a small $h$, the ODE $(1) imples that $X_{t+h} = X_t + h \cdot u_t$. If the target data is drawn from $p_{\text{data}}(\cdot)$, there exists a vector field that transports samples from an initial distribution—typically a standard Gaussian $N(0, I)$—to $p_{\text{data}}$. The main goal of Flow Matching is to learn or estimate the target vector field $u_t(x)$ using a neural network.
+Intuitively, the vector field $u_t(x)$ generates flows, as for a small $h$, the ODE $(1) imples that $X_{t+h} = X_t + h \cdot u_t$. If the target data is drawn from $p_{\text{data}}(\cdot)$, there exists a vector field that transports samples from an initial distribution, typically a standard Gaussian $N(0, I)$, to $p_{\text{data}}$. The main goal of Flow Matching is to learn or estimate the target vector field $u_t(x)$ using a neural network.
 
 ## Gaussian Probability Path
+
+Given a data sample $z_1, \ldots, z_n \sim p_{\text{data}}(\cdot)$, Flow Matching model wants to build the probablity path $p_t(\cdot)$ such that $X_0 \sim p_{\text{init}}(\cdot), \ldots, X_t \sim p_t(\cdot), \lodts, X_1 \sim p_{\text{data}(\cdot)}. However, it turns out to be highly challenging to construct such a path directly from the marginal $p_{\text{data}}$. Lipmain proposed to first construct a conditional path $p(x | z)$.
 
