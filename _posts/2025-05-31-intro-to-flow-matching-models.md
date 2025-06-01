@@ -35,5 +35,6 @@ $$\begin{align}
 p_t( x | z) = N(x | \alpha_t z \mid \beta_t^2 \cdot I)&
 \end{align}
 $$
+
 where the nosie scheduler $\alpha_t = t$ and $\beta_t^2 = 1 -t$.
 
