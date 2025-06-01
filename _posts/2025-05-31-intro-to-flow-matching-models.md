@@ -57,5 +57,5 @@ u_t( |z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \righ
 \end{align}
 $$
 
-Now, to generate probability path $p_t(\cdot)$ that converges to $p_{\text{data}}(\cdot)$, the **key trick** is to define $u^{\target}_t(x) = \bigint u_t(x | z) \cfrac{p(x | z) p(x)}{p(x)} dz$.
+where $\dot alpha = \frac{d}{dt} \alpha_t$ and $\dot \beta_t = \frac{d}{dt} \beta_t$. Now, to generate probability path $p_t(\cdot)$ that converges to $p_{\text{data}}(\cdot)$, the **key trick** is to define $u^{\text{target}}_t(x) = \bigint u_t(x | z) \cfrac{p(x | z) p(x)}{p(x)} dz$.
 
