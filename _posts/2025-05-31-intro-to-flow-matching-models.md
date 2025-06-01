@@ -41,11 +41,21 @@ $$
 
 where the nosie scheduler $\alpha_t = t$ and $\beta_t^2 = 1 -t$ and data point $z \sim p_{\text{data}}(\cdot)$.
 
-By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0, I)$ and $p_1(\cdot) = \delta_z$. In other words, the conditional probability path $p_t(\cdot | z)$ starts from $p_\text{init}$ and converges to the data point $z$ as $t \to 1$.
+By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0, I)$ and $p_1(\cdot) = \delta_z$. In other words, the conditional probability path $p_t(\cdot | z)$ starts from $p_\text{init}$ and converges to the data point $z$ as $t \to 1$. Alternatively, we write $X_t = \alpha_t z + \beta X_0$ and $X_0 \sim N(\cdot | 0, I)$.
 
 <p align="center">
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_gcp.png?raw=true" alt="a1_gcp" width="380"/>
 <br/>
 <em>Gaussian Conditionn path converges to data point z as time t goes to 1</em>
 </p>
+
+For this conditional path to be the solution of  $\cfrac{d}{dt} \tilde{X}_t = u_t( | z)$$, then 
+
+$
+\begin{algin}
+u_t( |z) = \left(\dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right)z + \cfrac{\dot \beta_t}{\beta_t} \right) + \cfrac{\dot \beta_t}{\beta_t} x &
+\end{align}
+$ 
+
+Now, to generate probability path $p_t(\cdot)$ that converges to $p_{\text{data}}(\cdot), the **key trick** is to define u^{\target}_t(x) = \bigint u_t(x | z) \cfrac{p(x | z) p(x)}{p(x)} dz$.
 
