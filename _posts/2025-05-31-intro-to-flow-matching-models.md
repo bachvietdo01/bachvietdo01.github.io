@@ -23,5 +23,5 @@ where $u_t(x)$ is the vector field and $X_t(x)$ a trajectory for location $x$ at
 <br>
 *Vector field in black generates flows in red. Image Credit: David Jeffery at UNLV*
 
-Intutively, the vector field $u_t(x)$ generates flows because for a sufficent small $h$, $X_{t+h} = X_t + h \cdot u_t$ . If the target data comes from $p_{\text{data}}(\cdot)$, there exists a vector field $u_t(x)$ that will take "particles" from an intial distribution toward $p_{\text{data}}$. A common choice for initial distribution is standard Gaussian.
+Intuitively, the vector field $u_t(x)$ generates flows, as for a small $h$, we have $X_{t+h} = X_t + h \cdot u_t$. If the target data is drawn from $p_{\text{data}}(\cdot)$, there exists a vector field that transports samples from an initial distribution—typically a standard Gaussian $N(0, I)$—to $p_{\text{data}}$. Flow Matching aims to learn or approximate this vector field $u_t(x)$ using a neural network.
 
