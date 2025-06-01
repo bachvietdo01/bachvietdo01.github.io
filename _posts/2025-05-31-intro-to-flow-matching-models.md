@@ -28,7 +28,7 @@ where $u_t(x): \mathbb{R}^d \times [0,1] \to \mathbb{R}^d$ is the vector field a
 <em>Vector field in black generates flows in red. Image Credit: David Jeffery at UNLV</em>
 </p>
 
-Intuitively, the vector field $u_t(x)$ generates flows, as for a small $h$, the ODE $(1) imples that $X_{t+h} = X_t + h \cdot u_t$. If the target data is drawn from $p_{\text{data}}(\cdot)$, there exists a vector field that transports samples from an initial distribution, typically a standard Gaussian $N(0, I)$, to $p_{\text{data}}$. The main goal of Flow Matching is to learn or estimate the target vector field $u_t(x)$ using a neural network.
+Intuitively, the vector field $u_t(x)$ generates flows, as for a small $h$, the ODE $(1)$ imples that $X_{t+h} = X_t + h \cdot u_t$. If the target data is drawn from $p_{\text{data}}(\cdot)$, there exists a vector field that transports samples from an initial distribution, typically a standard Gaussian $N(0, I)$, to $p_{\text{data}}$. The main goal of Flow Matching is to learn or estimate the target vector field $u_t(x)$ using a neural network.
 
 ## Gaussian Probability Path
 
