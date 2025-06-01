@@ -38,3 +38,4 @@ $$
 
 where the nosie scheduler $\alpha_t = t$ and $\beta_t^2 = 1 -t$ and data point $z \sim p_{\text{data}}(\cdot)$.
 
+By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0, I)$ adn $p_1(\codt) = \delta_z$. In other words, the conditional probability path $p_t(\cdot | z)$ starts from $p_\text{init}$ and converges to the data point $z$ as $t \to 1$.
