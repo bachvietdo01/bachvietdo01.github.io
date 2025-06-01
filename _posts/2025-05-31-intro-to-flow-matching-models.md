@@ -51,21 +51,4 @@ By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0
 
 In addition, we can write $X_t = \alpha_t z + \beta_t X_0$ and $X_0 \sim N(\cdot | 0, I)$. For $X_t$ to be the solution of $\frac{d}{dt} X_t = u_t(X_t | z)$, it is true that
 
-$$
-\begin{align}
-u_t( |z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \cfrac{\dot \beta_t}{\beta_t} x &
-\end{align}
-$$
-
-where $\dot \alpha_t = \frac{d}{dt} \alpha_t$ and $\dot \beta_t = \frac{d}{dt} \beta_t$. 
-
-With ths result, if we define
-
-$$
-\begin{align}
-u^{\text{target}}_t(x) := \int u_t(x | z) \cfrac{p(x | z) p(x)}{p(x)} dz.
-\end{align}
-$$
-
-The flow solution to $\frac{d}{dt} X_t = u_t^{\text{target}} (X_t)$ can be shown to describe the probabilistic path $X_0, \ldots, X_t, \ldots, X_1$, where $X_1 \sim p_{\text{data}}$. This key result is also known as the continuity equation, which is a special case of the Fokker–Planck equation. The proof can be found in Theorem 1 of Lipman et al., 2023.
 
