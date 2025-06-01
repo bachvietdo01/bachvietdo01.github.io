@@ -19,7 +19,7 @@ $$\begin{align}
 \cfrac{d}{dt} X_t = u_t(X_t) \\quad (1)&
 \end{align}$$  
 
-where $u_t(x): \mathbb{R}^d \times [0,1] \to mathbb{R}^d$ is the vector field and $X_t: [0,1] \to \mathbb{R}^d$ a trajectory for location $x$ at time $t$. Formally, the solution to ODE $(1)$ is called flows, with each flow corresponding to a different initial point. We can also say vector field $u_t(x)$ generates flow $X_t(x)$ as demonstrated in the below figure.
+where $u_t(x): \mathbb{R}^d \times [0,1] \to \mathbb{R}^d$ is the vector field and $X_t: [0,1] \to \mathbb{R}^d$ a trajectory for location $x$ at time $t$. Formally, the solution to ODE $(1)$ is called flows, with each flow corresponding to a different initial point. We can also say vector field $u_t(x)$ generates flow $X_t$ as demonstrated in the below figure.
 
 
 <p align="center">
