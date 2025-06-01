@@ -42,6 +42,7 @@ By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0
 
 <p align="center">
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_gcp.png?raw=true" alt="a1_gcp" width="380"/>
+<br/>
 <em>Gaussian Conditionn path converges to data point z as time t goes to 1</em>
 </p>
 
