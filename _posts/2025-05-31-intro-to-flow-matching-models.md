@@ -21,9 +21,12 @@ $$\begin{align}
 
 where $u_t(x)$ is the vector field and $X_t(x)$ a trajectory for location $x$ at time $t$. Formally, the solution to ODE $(1)$ is called flows, with each flow corresponding to a different initial point. We can also say vector field $u_t(x)$ generates flow $X_t(x)$ as demonstrated in the below figure.
 
-![VectorFieldFLow](https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/vf_flow.gif?raw=true)
-<br>
-*Vector field in black generates flows in red. Image Credit: David Jeffery at UNLV*
+
+<p align="center">
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/vf_flow.gif?raw=true" alt="vectorfieldflow" width="380"/>
+<br/>
+<em>Vector field in black generates flows in red. Image Credit: David Jeffery at UNLV</em>
+</p>
 
 Intuitively, the vector field $u_t(x)$ generates flows, as for a small $h$, the ODE $(1) imples that $X_{t+h} = X_t + h \cdot u_t$. If the target data is drawn from $p_{\text{data}}(\cdot)$, there exists a vector field that transports samples from an initial distribution, typically a standard Gaussian $N(0, I)$, to $p_{\text{data}}$. The main goal of Flow Matching is to learn or estimate the target vector field $u_t(x)$ using a neural network.
 
