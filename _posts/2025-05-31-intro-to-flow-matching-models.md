@@ -16,10 +16,10 @@ image: mountains.jpg
 The key idea of [Flow Matching](https://arxiv.org/abs/2210.02747) is to construct a probability flow — a path $X_0, \ldots, X_t, \ldots, X_1$ over time index $t \in [0, 1]$ — where  $X_0$ is sampled from an initial distribution $p_{\text{init}}$ and $X_1$ comes from the target distribution $p_{\text{data}}(\cdot)$. This path is a solution to the following ODE (Ordinary Differential Equation), 
 
 $$\begin{align} 
-\cfrac{d}{dt} X_t(x) = u_t(x) \\quad (1)&
+\cfrac{d}{dt} X_t = u_t(X_t) \\quad (1)&
 \end{align}$$  
 
-where $u_t(x)$ is the vector field and $X_t(x)$ a trajectory for location $x$ at time $t$. Formally, the solution to ODE $(1)$ is called flows, with each flow corresponding to a different initial point. We can also say vector field $u_t(x)$ generates flow $X_t(x)$ as demonstrated in the below figure.
+where $u_t(x): \mathbb{R}^d \times [0,1] \to mathbb{R}^d$ is the vector field and $X_t: [0,1] \to \mathbb{R}^d$ a trajectory for location $x$ at time $t$. Formally, the solution to ODE $(1)$ is called flows, with each flow corresponding to a different initial point. We can also say vector field $u_t(x)$ generates flow $X_t(x)$ as demonstrated in the below figure.
 
 
 <p align="center">
