@@ -15,7 +15,7 @@ The key idea is to construct a probability flow — a path $X_0, \ldots, X_t, \l
 
 $$\begin{aligned} 
 \cfrac{d}{dt} X_t(x) = u_t(x)&
-\label{eq:ode}\tag{1} 
+\label{eq:ode}
 \end{aligned}$$  
 
 where $u_t(x)$ is the vector field for location $x$ at time $t$. Formally, the solution to ODE $\ref{eq:ode}$ is called flows, with each flow corresponding to a different initial point.
