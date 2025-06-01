@@ -58,7 +58,7 @@ $$
 
 where $\dot \alpha_t = \frac{d}{dt} \alpha_t$ and $\dot \beta_t = \frac{d}{dt} \beta_t$. 
 
-Now, to generate probability path $p_t(\cdot)$ that converges to $p_{\text{data}}(\cdot)$, the **key trick** is to define 
+Now, to generate marginal probability path $p_t$ that converges to $p_{\text{data}}$, the **key trick** is to define 
 
 $$
 \begin{align}
