@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/832d38c5-c26a-4381-9cb8-4d4d97dae878)---
+---
 layout: post
 title: "Flow Matching: A Gentle Intro to Flow Matching Models"
 author: "Bach Do"
