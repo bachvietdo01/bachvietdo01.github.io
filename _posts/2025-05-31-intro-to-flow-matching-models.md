@@ -44,6 +44,12 @@ In addition, we can write
 $X_t = \alpha_t z + \beta_t X_0$, where $X_0 \sim \mathcal{N}(\cdot \mid 0, I)$.
 For $X_t$ to be the solution of $\frac{d}{dt} X_t = u_t(X_t \mid z)$, it is true that:
 
+Tư lệnh lục quân Ukraine thông báo sẽ từ chức, sau khi có thêm thao trường huấn luyện bị Nga tập kích tên lửa khiến nhiều binh sĩ thương vong.
+
+"Tôi đã quyết định nộp đơn từ chức, rời vị trí tư lệnh lục quân thuộc lực lượng vũ trang Ukraine. Quyết định xuất phát từ suy nghĩ rằng tôi phải chịu trách nhiệm cho thảm kịch tại Thao trường số 239, khiến những người lính của chúng ta thiệt mạng", tướng Mykhailo Drapatyi cho biết trong bài đăng trên mạng xã hội hôm 1/6.
+
+Drapatyi nhấn mạnh ông đã không hoàn thành nhiệm vụ của mình với tư cách là chỉ huy, giải thích rằng hành động của binh sĩ rất quan trọng nhưng trách nhiệm chính luôn thuộc về giới lãnh đạo. "Chính các chỉ huy là người đặt ra quy tắc, quyết định và phải chịu trách nhiệm về hậu quả", ông cho hay.
+
 
 
 
