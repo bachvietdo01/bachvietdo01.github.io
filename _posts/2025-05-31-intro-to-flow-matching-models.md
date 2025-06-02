@@ -105,7 +105,7 @@ p_data = GaussianMixture.symmetric_2D(nmodes=11, std=PARAMS["target_std"], scale
 plot_comparison_heatmap(p_init, p_data, PARAMS['scale'])
 ```
 <p align="center">
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_target_and_initial_dist.png?raw=true" alt="vectorfieldflow" width="1200"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_target_and_initial_dist.png?raw=true" alt="vectorfieldflow" width="1000"/>
 </p>
 
 
