@@ -38,17 +38,28 @@ However, directly building this path from the marginal $p_{\text{data}}$ is high
 
 where the noise scheduler is defined as $\alpha_t = t$ and $\beta_t^2 = 1 - t$, and the data point $z \sim p_{\text{data}}(\cdot)$.
 
-By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = \mathcal{N}(\cdot \mid 0, I)$ and $p_1(\cdot) = \delta_z$. In other words, the conditional probability path $p_t(\cdot \mid z)$ starts from $p_{\text{init}}$ and converges to the data point $z$ as $t \to 1$.
+By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0, I)$ and $p_1(\cdot) = \delta_z$. In other words, the conditional probability path $p_t(\cdot \mid z)$ starts from $p_{\text{init}}$ and converges to the data point $z$ as $t \to 1$.
 
 In addition, we can write
-$X_t = \alpha_t z + \beta_t X_0$, where $X_0 \sim \mathcal{N}(\cdot \mid 0, I)$.
+$X_t = \alpha_t z + \beta_t X_0$, where $X_0 \sim N(\cdot \mid 0, I)$.
 For $X_t$ to be the solution of $\frac{d}{dt} X_t = u_t(X_t \mid z)$, it is true that:
 
-Tư lệnh lục quân Ukraine thông báo sẽ từ chức, sau khi có thêm thao trường huấn luyện bị Nga tập kích tên lửa khiến nhiều binh sĩ thương vong.
+$$
+\begin{align}
+u_t( |z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \cfrac{\dot \beta_t}{\beta_t} x &
+\end{align}
+$$
 
-"Tôi đã quyết định nộp đơn từ chức, rời vị trí tư lệnh lục quân thuộc lực lượng vũ trang Ukraine. Quyết định xuất phát từ suy nghĩ rằng tôi phải chịu trách nhiệm cho thảm kịch tại Thao trường số 239, khiến những người lính của chúng ta thiệt mạng", tướng Mykhailo Drapatyi cho biết trong bài đăng trên mạng xã hội hôm 1/6.
+where $\dot \alpha_t = \frac{d}{dt} \alpha_t$ and $\dot \beta_t = \frac{d}{dt} \beta_t$. With ths result, if we define
 
-Drapatyi nhấn mạnh ông đã không hoàn thành nhiệm vụ của mình với tư cách là chỉ huy, giải thích rằng hành động của binh sĩ rất quan trọng nhưng trách nhiệm chính luôn thuộc về giới lãnh đạo. "Chính các chỉ huy là người đặt ra quy tắc, quyết định và phải chịu trách nhiệm về hậu quả", ông cho hay.
+$$
+\begin{align}
+u^{\text{target}}_t(x) := \int u_t(x | z) \cfrac{p(x | z) p(x)}{p(x)} dz.
+\end{align}
+$$
+
+The flow solution to $\frac{d}{dt} X_t = u_t^{\text{target}} (X_t)$ can be shown to describe the probabilistic path $X_0, \ldots, X_t, \ldots, X_1$, where $X_1 \sim p_{\text{data}}$. This key result is also known as the continuity equation, which is a special case of the Fokker–Planck equation. The proof can be found in Theorem 1 of Lipman et al., 2023.
+
 
 
 
