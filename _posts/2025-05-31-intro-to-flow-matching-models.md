@@ -73,7 +73,7 @@ The vector field $u_t^{\text{target}}(x)$ captures everything needed to define t
 
 $$
 \begin{align}
-L_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } \lVert u_t^{\text{target}}(x) - u_t^{\theta}(x) \lVert^2_2&
+L_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}(0,1),\, x \sim p_t} \left\lVert u_t^{\text{target}}(x) - u_t^{\theta}(x) \right\rVert_2^2
 \end{align}
 $$
 
@@ -81,7 +81,7 @@ However, this loss is intractable since the form of $p_{\text{data}}(z)$ is unkn
 
 $$
 \begin{align}
-L_{\text{CFM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } \lVert u_t^{\text{target}}(x | z) - u_t^{\theta}(x) \lVert^2_2&
+L_{\text{CFM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}(0,1),\, x \sim p_t} \left\lVert u_t^{\text{target}}(x \mid z) - u_t^{\theta}(x) \right\rVert_2^2
 \end{align}
 $$
 
