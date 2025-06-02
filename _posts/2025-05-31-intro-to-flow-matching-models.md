@@ -70,22 +70,17 @@ The flow solution to $\frac{d}{dt} X_t = u_t^{\text{target}} (X_t)$ can be shown
 
 The vector field $u_t^{\text{target}}(x)$ captures everything needed to define the path toward the target distribution. To learn it, we train a neural network denoted by $u_t^{\theta}(x)$. A natural choice for the objective loss function is:
 
-
 $$
-\begin{aligned}
 L_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}(0,1),\, x \sim p_t} \left\lVert u_t^{\text{target}}(x) - u_t^{\theta}(x) \right\rVert_2^2
-\end{aligned}
 $$
 
-However, this loss is intractable since the form of $p_{\text{data}}(z)$ is unknown. A key result from Flow Matching (Lipman et al., 2023) shows it is proportional to a tractable objective, i.e. , $L_{\text{FM}}(\theta) = L_{\text{CFM}}(\theta) + C$ where $C$ is a constant free of $\theta$ and $L_{\text{CFM}}(\theta)$ is as follows,
+However, this loss is intractable since the form of $p_{\text{data}}(z)$ is unknown. A key result from Flow Matching (Lipman et al., 2023) shows it is proportional to a tractable objective, i.e., $L_{\text{FM}}(\theta) = L_{\text{CFM}}(\theta) + C$, where $C$ is a constant independent of $\theta$, and $L_{\text{CFM}}(\theta)$ is given by:
 
 $$
-\begin{aligned}
 L_{\text{CFM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}(0,1),\, x \sim p_t} \left\lVert u_t^{\text{target}}(x \mid z) - u_t^{\theta}(x) \right\rVert_2^2
-\end{aligned}
 $$
 
-where the form of $u_t(x|z)$ is shown in the last section.
+where the form of $u_t(x \mid z)$ is shown in the last section.
 
 
 ## Putting it all together into practice
