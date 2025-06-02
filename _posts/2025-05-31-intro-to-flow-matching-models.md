@@ -39,6 +39,6 @@ where the nosie scheduler $\alpha_t = t$ and $\beta_t^2 = 1 -t$ and data point $
 By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0, I)$ and $p_1(\cdot) = \delta_z$. In other words, the conditional probability path $p_t(\cdot | z)$ starts from $p_{\text{init}}$ and converges to the data point $z$ as $t \to 1$.
 
 
-In addition, we can write $X_t = \alpha_t z + \beta_t X_0$ and $X_0 \sim N(\cdot | 0, I)$. For $X_t$ to be the solution of $\frac{d}{dt} X_t = u_t(X_t | z)$, it is true
+In addition, we can write $X_t = \alpha_t z + \beta_t X_0$ and $X_0 \sim N(\cdot | 0, I)$. For $X_t$ to be the solution of $\frac{d}{dt} X_t = u_t(X_t | z)$, it is true that
 
 
