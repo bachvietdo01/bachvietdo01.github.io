@@ -68,6 +68,14 @@ The flow solution to $\frac{d}{dt} X_t = u_t^{\text{target}} (X_t)$ can be shown
 
 ## Flow Matching and Conditional Flow Matching Objective Loss
 
+The vector field $u_t^{\text{target}}(x)$ contains all we need to generate the path to the target distribution so we want to learn it with a neural net $u_t^{\theta}(x)$. The natural objective loss function is 
+
+$$
+\begin{align}
+L_{\text{FM}}(\theta) \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } || u_t^{\text{target}}(x) - u_t^{\theta}(x) ||_2^2 &
+\end{align}
+$$
+
 
 
 
