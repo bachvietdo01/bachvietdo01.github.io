@@ -32,13 +32,18 @@ Intuitively, the vector field $u_t(x)$ generates flows, as for a small $h$, the 
 
 ## Gaussian Probability Path
 
-To reiterate, given a data sample $z_1, \ldots, z_n \sim p_{\text{data}}(\cdot)$, the Flow Matching model aims to construct a probability path $p_t(\cdot)$ such that $X_0 \sim p_{\text{init}}(\cdot), \ldots, X_t \sim p_t(\cdot), \ldots, X_1 \sim p_{\text{data}}(\cdot)$. However, directly building this path from the marginal $p_{\text{data}}$ is highly challenging. To address this, Lipman proposed first constructing a Gaussian conditional path $p_t(x \mid z)$,
+To reiterate, given a data sample $z_1, \ldots, z_n \sim p_{\text{data}}(\cdot)$, the Flow Matching model aims to construct a probability path $p_t(\cdot)$ such that
+$X_0 \sim p_{\text{init}}(\cdot), \ldots, X_t \sim p_t(\cdot), \ldots, X_1 \sim p_{\text{data}}(\cdot)$.
+However, directly building this path from the marginal $p_{\text{data}}$ is highly challenging. To address this, Lipman proposed first constructing a Gaussian conditional path $p_t(x \mid z)$,
 
-where the nosie scheduler $\alpha_t = t$ and $\beta_t^2 = 1 -t$ and data point $z \sim p_{\text{data}}(\cdot)$.
+where the noise scheduler is defined as $\alpha_t = t$ and $\beta_t^2 = 1 - t$, and the data point $z \sim p_{\text{data}}(\cdot)$.
 
-By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0, I)$ and $p_1(\cdot) = \delta_z$. In other words, the conditional probability path $p_t(\cdot | z)$ starts from $p_{\text{init}}$ and converges to the data point $z$ as $t \to 1$.
+By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = \mathcal{N}(\cdot \mid 0, I)$ and $p_1(\cdot) = \delta_z$. In other words, the conditional probability path $p_t(\cdot \mid z)$ starts from $p_{\text{init}}$ and converges to the data point $z$ as $t \to 1$.
+
+In addition, we can write
+$X_t = \alpha_t z + \beta_t X_0$, where $X_0 \sim \mathcal{N}(\cdot \mid 0, I)$.
+For $X_t$ to be the solution of $\frac{d}{dt} X_t = u_t(X_t \mid z)$, it is true that:
 
 
-In addition, we can write $X_t = \alpha_t z + \beta_t X_0$ and $X_0 \sim N(\cdot | 0, I)$. For $X_t$ to be the solution of $\frac{d}{dt} X_t = u_t(X_t | z)$, it is true that
 
 
