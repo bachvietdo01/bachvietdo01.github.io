@@ -87,7 +87,7 @@ where the form of $u_t(x \mid z)$ is shown in the last section.
 
 Alright, now that we've covered the foundation, it's time to dive into the implementation.
 
-#### Step 0: specify the target and an inital distribution
+### Step 0: specify the target and an inital distribution
 
 ```
 from gaussian import Gaussian, GaussianMixture
@@ -108,6 +108,136 @@ plot_comparison_heatmap(p_init, p_data, PARAMS['scale'])
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_target_and_initial_dist.png?raw=true" alt="vectorfieldflow" width="1000"/>
 </p>
 
+
+### Step 1: build the Gaussin Conditional Probability Path
+
+```
+from gaussian import Sampleable
+
+class StandardNormal(nn.Module, Sampleable):
+    """
+    Sampleable wrapper around torch.randn
+    """
+    def __init__(self, shape: List[int], std: float = 1.0):
+        """
+        shape: shape of sampled data
+        """
+        super().__init__()
+        self.shape = shape
+        self.std = std
+        self.dummy = nn.Buffer(torch.zeros(1)) # Will automatically be moved when self.to(...) is called...
+
+    def sample(self, num_samples) -> torch.Tensor:
+        return self.std * torch.randn(num_samples, *self.shape).to(self.dummy.device)
+```
+
+```
+class LinearAlpha:
+    """
+    Implements alpha_t = t
+    """
+    def __init__(self):
+        # Check alpha_t(0) = 0
+        assert torch.allclose(
+            self(torch.zeros(1,1,1,1)), torch.zeros(1,1,1,1)
+        )
+        # Check alpha_1 = 1
+        assert torch.allclose(
+            self(torch.ones(1,1,1,1)), torch.ones(1,1,1,1)
+        )
+
+    def __call__(self, t: torch.Tensor) -> torch.Tensor:
+        """
+        Args:
+            - t: time (num_samples, 1)
+        Returns:
+            - alpha_t (num_samples, 1)
+        """
+        return t
+
+    def dt(self, t: torch.Tensor) -> torch.Tensor:
+        """
+        Evaluates d/dt alpha_t.
+        Args:
+            - t: time (num_samples, 1)
+        Returns:
+            - d/dt alpha_t (num_samples, 1)
+        """
+        return torch.ones_like(t)
+        
+
+class SquareRootBeta:
+    """
+    Implements beta_t = rt(1-t)
+    """
+    def __init__(self):
+        # Check beta_0 = 1
+        assert torch.allclose(
+            self(torch.zeros(1,1,1,1)), torch.ones(1,1,1,1)
+        )
+        # Check beta_1 = 0
+        assert torch.allclose(
+            self(torch.ones(1,1,1,1)), torch.zeros(1,1,1,1)
+        )
+
+    def __call__(self, t: torch.Tensor) -> torch.Tensor:
+        """
+        Args:
+            - t: time (num_samples, 1)
+        Returns:
+            - beta_t (num_samples, 1)
+        """
+        return torch.sqrt(1 - t)
+
+    def dt(self, t: torch.Tensor) -> torch.Tensor:
+        """
+        Evaluates d/dt alpha_t.
+        Args:
+            - t: time (num_samples, 1)
+        Returns:
+            - d/dt alpha_t (num_samples, 1)
+        """
+        return - 0.5 / (torch.sqrt(1 - t) + 1e-4)
+```
+
+```
+class GaussianConditionalProbabilityPath(nn.Module):
+    def __init__(self, p_data: Sampleable, alpha: LinearAlpha, beta: SquareRootBeta):
+        super().__init__()
+        p_init = StandardNormal(shape = [p_data.dim], std = 1.0)
+        self.p_init = p_init
+        self.p_data = p_data
+        
+        self.alpha = alpha
+        self.beta = beta
+
+    def sample_marginal_path(self, t: torch.Tensor) -> torch.Tensor:
+        num_samples = t.shape[0]
+        # Sample conditioning variable z ~ p(z)
+        z, _ = self.sample_conditioning_variable(num_samples) # (num_samples, c, h, w)
+        # Sample conditional probability path x ~ p_t(x|z)
+        x = self.sample_conditional_path(z, t) # (num_samples, c, h, w)
+        return x
+
+    def sample_conditioning_variable(self, num_samples: int) -> torch.Tensor:
+        return self.p_data.sample(num_samples)
+
+    def sample_conditional_path(self, z: torch.Tensor, t: torch.Tensor) -> torch.Tensor:
+        return self.alpha(t) * z + self.beta(t) * torch.randn_like(z)
+
+    def conditional_vector_field(self, x: torch.Tensor, z: torch.Tensor, t: torch.Tensor) -> torch.Tensor:
+        alpha_t = self.alpha(t) # (num_samples, 1, 1, 1)
+        beta_t = self.beta(t) # (num_samples, 1, 1, 1)
+        dt_alpha_t = self.alpha.dt(t) # (num_samples, 1, 1, 1)
+        dt_beta_t = self.beta.dt(t) # (num_samples, 1, 1, 1)
+
+        return (dt_alpha_t - dt_beta_t / beta_t * alpha_t) * z + dt_beta_t / beta_t * x
+
+    def conditional_score(self, x: torch.Tensor, z: torch.Tensor, t: torch.Tensor) -> torch.Tensor:
+        alpha_t = self.alpha(t)
+        beta_t = self.beta(t)
+        return (z * alpha_t - x) / beta_t ** 2
+```
 
 
 
