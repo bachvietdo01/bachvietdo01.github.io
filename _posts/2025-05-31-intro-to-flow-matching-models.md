@@ -89,6 +89,8 @@ Alright, now that we've covered the foundation, it's time to dive into the imple
 
 ### Step 0: specify the target and an inital distribution
 
+The initial distribution is a standard Gaussian distribution.
+
 ```
 from gaussian import Gaussian, GaussianMixture
 from ultility import plot_comparison_heatmap
@@ -110,6 +112,8 @@ plot_comparison_heatmap(p_init, p_data, PARAMS['scale'])
 
 
 ### Step 1: build the Gaussin Conditional Probability Path
+
+$\alpha_t = 1$ and $\beta_t = \sqrt{1-t}$, and so  $\dot \alpha_t = 1$ and $\dot \beta_t = -\frac{1}{2\sqrt{1-t}}$.
 
 ```
 from gaussian import Sampleable
