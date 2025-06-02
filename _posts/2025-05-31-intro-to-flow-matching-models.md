@@ -85,8 +85,30 @@ where the form of $u_t(x \mid z)$ is shown in the last section.
 
 ## Putting it all together into practice
 
+Alright, now that we've covered the foundation, it's time to dive into the implementation.
 
+#### Step 0: specify the target and an inital distribution
 
+```
+from gaussian import Gaussian, GaussianMixture
+from ultility import plot_comparison_heatmap
+
+# Constants for the duration of our use of Gaussian conditional probability paths, to avoid polluting the namespace...
+PARAMS = {
+    "scale": 15.0,
+    "target_scale": 10.0,
+    "target_std": 1.0,
+}
+
+p_init = Gaussian.standard(dim=2, std = 1.0).to(device)
+p_data = GaussianMixture.symmetric_2D(nmodes=11, std=PARAMS["target_std"], scale=PARAMS["target_scale"]).to(device)
+plot_comparison_heatmap(p_init, p_data, PARAMS['scale'])
+```
+<p align="center">
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_target_and_initial_dist.png?raw=true" alt="vectorfieldflow" width="380"/>
+<br>
+<em>Vector field in black generates flows in red. Image Credit: David Jeffery at UNLV</em>
+</p>
 
 
 
