@@ -85,7 +85,7 @@ L_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } \lVert
 \end{align}
 $$
 
-where $u_t( |z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \cfrac{\dot \beta_t}{\beta_t} x$ as shown in the last section.
+where $u_t( |z) = \left ( \dot \alpha_t -  \frac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \frac{\dot \beta_t}{\beta_t} x$ as shown in the last section.
 
 
 
