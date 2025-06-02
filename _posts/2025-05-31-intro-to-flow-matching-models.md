@@ -106,6 +106,7 @@ p_init = Gaussian.standard(dim=2, std = 1.0).to(device)
 p_data = GaussianMixture.symmetric_2D(nmodes=11, std=PARAMS["target_std"], scale=PARAMS["target_scale"]).to(device)
 plot_comparison_heatmap(p_init, p_data, PARAMS['scale'])
 ```
+
 <p align="center">
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_target_and_initial_dist.png?raw=true" alt="vectorfieldflow" width="1000"/>
 </p>
@@ -113,7 +114,7 @@ plot_comparison_heatmap(p_init, p_data, PARAMS['scale'])
 
 ### Step 1: build the Gaussin Conditional Probability Path
 
-$\alpha_t = 1$ and $\beta_t = \sqrt{1-t}$, and so  $\dot \alpha_t = 1$ and $\dot \beta_t = -\cfrac{1}{2\sqrt{1-t}}$.
+$\alpha_t = t$ and $\beta_t = \sqrt{1-t}$, and so  $\dot \alpha_t = 1$ and $\dot \beta_t = -\cfrac{1}{2\sqrt{1-t}}$.
 
 ```
 from gaussian import Sampleable
@@ -242,6 +243,105 @@ class GaussianConditionalProbabilityPath(nn.Module):
         beta_t = self.beta(t)
         return (z * alpha_t - x) / beta_t ** 2
 ```
+
+```
+# Construct conditional probability path
+path = GaussianConditionalProbabilityPath(
+    p_data = p_data,
+    alpha = LinearAlpha(),
+    beta = SquareRootBeta()
+).to(device)
+```
+
+### Step 2: learn the vector filed with an MLP neural net
+
+In the following, we choose $u^{\theta}_t(x)$ to be an MLP and caclulate the Conditional Flow Matching loss $L_{\text{CFM}}(\theta)$.
+
+```
+class MLPVectorField(torch.nn.Module):
+    """
+    MLP-parameterization of the learned vector field u_t^theta(x)
+    """
+    def get_mlp(self, dims: List[int], activation: Type[torch.nn.Module] = torch.nn.SiLU):
+        mlp = []
+        for idx in range(len(dims) - 1):
+            mlp.append(torch.nn.Linear(dims[idx], dims[idx + 1]))
+            if idx < len(dims) - 2:
+                mlp.append(activation())
+        return torch.nn.Sequential(*mlp)
+
+    def __init__(self, dim: int, hiddens: List[int]):
+        super().__init__()
+        self.dim = dim
+        self.net = self.get_mlp([dim + 1] + hiddens + [dim])
+
+    def forward(self, x: torch.Tensor, t: torch.Tensor):
+        """
+        Args:
+        - x: (bs, dim)
+        Returns:
+        - u_t^theta(x): (bs, dim)
+        """
+        xt = torch.cat([x,t], dim=-1)
+        return self.net(xt)
+```
+
+```
+from trainer import Trainer
+
+class ConditionalFlowMatchingTrainer(Trainer):
+    def __init__(self, path: GaussianConditionalProbabilityPath, model: MLPVectorField, **kwargs):
+        super().__init__(model, **kwargs)
+        self.path = path
+
+    def get_train_loss(self, batch_size: int) -> torch.Tensor:
+      z = self.path.p_data.sample(batch_size)
+      t = torch.rand(batch_size, 1)
+      x = self.path.sample_conditional_path(z, t)
+      u_theta = self.model(x, t)
+      u_ref = self.path.conditional_vector_field(x, z, t)
+
+      return torch.mean((u_theta - u_ref)**2)
+```
+
+```
+# Construct learnable vector field
+flow_model = MLPVectorField(dim=2, hiddens=[1024,16])
+
+# Construct trainer
+trainer = ConditionalFlowMatchingTrainer(path, flow_model)
+losses = trainer.train(num_epochs=5000, device=device, lr=1e-3, batch_size=1000)
+```
+
+
+### Step 3: Generate samples from the learned model
+
+Given the estimated $u^{\hat{\theta}}(x)$, our goal is to sample (or generate) data from the learned vector field. As shown below, the red dots represent the desired samples drawn from a Gaussian mixture with 11 components.
+
+
+```
+from ode import LearnedVectorFieldODE, EulerSimulator
+
+num_samples = 1000
+num_timesteps = 300
+num_marginals = 3
+
+ode = LearnedVectorFieldODE(flow_model)
+simulator = EulerSimulator(ode)
+x0 = path.p_init.sample(num_samples) # (num_samples, 2)
+ts = torch.linspace(0.0, 1.0, num_timesteps).view(1,-1,1).expand(num_samples,-1,1).to(device) # (num_samples, nts, 1)
+xts = simulator.simulate_with_trajectory(x0, ts) # (bs, 
+```
+
+```
+from importlib import reload
+from ultility import plot_generated_sample
+
+plot_generated_sample(xts, ts, p_init, p_data, scale = PARAMS['scale'], num_samples=num_samples, num_timesteps=num_timesteps, num_marginals=num_marginals)
+```
+<p align="center">
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_sampled_gm.png?raw=true" alt="vectorfieldflow" width="1000"/>
+</p>
 
 
 
