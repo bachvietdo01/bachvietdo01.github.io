@@ -68,13 +68,27 @@ The flow solution to $\frac{d}{dt} X_t = u_t^{\text{target}} (X_t)$ can be shown
 
 ## Flow Matching and Conditional Flow Matching Objective Loss
 
-The vector field $u_t^{\text{target}}(x)$ contains all we need to generate the path to the target distribution so we want to learn it with a neural net $u_t^{\theta}(x)$. A natural objective loss function is 
+The vector field $u_t^{\text{target}}(x)$ captures everything needed to define the path toward the target distribution. To approximate it, we train a neural network denoted by $u_t^{\theta}(x)$. A natural choice for the objective loss function is:
+
 
 $$
 \begin{align}
 L_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } \lVert u_t^{\text{target}}(x) - u_t^{\theta}(x) \lVert^2_2&
 \end{align}
 $$
+
+However, this loss is intractable since the form of $p_{\text{data}}(z)$ is unknown. A key result from Flow Matching (Lipman et al., 2023) shows it is proportional to a tractable objective:
+
+$$
+\begin{align}
+L_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } \lVert u_t^{\text{target}}(x | z) - u_t^{\theta}(x) \lVert^2_2&
+\end{align}
+$$
+
+where $u_t( |z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \cfrac{\dot \beta_t}{\beta_t} x$ as shown in the last section.
+
+
+
 
 
 
