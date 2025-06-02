@@ -72,17 +72,17 @@ The vector field $u_t^{\text{target}}(x)$ captures everything needed to define t
 
 
 $$
-\begin{align}
+\begin{aligned}
 L_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}(0,1),\, x \sim p_t} \left\lVert u_t^{\text{target}}(x) - u_t^{\theta}(x) \right\rVert_2^2
-\end{align}
+\end{aligned}
 $$
 
 However, this loss is intractable since the form of $p_{\text{data}}(z)$ is unknown. A key result from Flow Matching (Lipman et al., 2023) shows it is proportional to a tractable objective, i.e. , $L_{\text{FM}}(\theta) = L_{\text{CFM}}(\theta) + C$ where $C$ is a constant free of $\theta$ and $L_{\text{CFM}}(\theta)$ is as follows,
 
 $$
-\begin{align}
+\begin{aligned}
 L_{\text{CFM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}(0,1),\, x \sim p_t} \left\lVert u_t^{\text{target}}(x \mid z) - u_t^{\theta}(x) \right\rVert_2^2
-\end{align}
+\end{aligned}
 $$
 
 where the form of $u_t(x|z)$ is shown in the last section.
