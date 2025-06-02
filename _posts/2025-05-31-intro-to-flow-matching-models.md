@@ -77,7 +77,7 @@ L_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } \lVert
 \end{align}
 $$
 
-However, this loss is intractable since the form of $p_{\text{data}}(z)$ is unknown. A key result from Flow Matching (Lipman et al., 2023) shows it is proportional to a tractable objective,i.e., $L_{\text{FM}}(\theta) = L_{\text{CFM}}(\theta) + C$ where $C$ is a constant free of $\theta$ and $L_{\text{CFM}}(\theta)$ is as follows,
+However, this loss is intractable since the form of $p_{\text{data}}(z)$ is unknown. A key result from Flow Matching (Lipman et al., 2023) shows it is proportional to a tractable objective, i.e. , $L_{\text{FM}}(\theta) = L_{\text{CFM}}(\theta) + C$ where $C$ is a constant free of $\theta$ and $L_{\text{CFM}}(\theta)$ is as follows,
 
 $$
 \begin{align}
@@ -85,7 +85,10 @@ L_{\text{CFM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } \lVer
 \end{align}
 $$
 
-where $u_t( |z) = \left ( \dot \alpha_t -  \frac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \frac{\dot \beta_t}{\beta_t} x$ as shown in the last section.
+where $u_t( |z) = ( \dot \alpha_t -  \frac{\dot \beta_t}{\beta_t} \alpha_t )z + \frac{\dot \beta_t}{\beta_t} x$ as shown in the last section.
+
+
+## Putting it all together into practice
 
 
 
