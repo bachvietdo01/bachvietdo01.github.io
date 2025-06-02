@@ -77,7 +77,7 @@ L_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } \lVert
 \end{align}
 $$
 
-However, this loss is intractable since the form of $p_{\text{data}}(z)$ is unknown. A key result from Flow Matching (Lipman et al., 2023) shows it is proportional to a tractable objective,i.e., $L_{\text{FM}}(\theta) = L_{\text{CFM}}(\theta) + C$ where $C$ is a constant free of $\theta$ and $L_{\text{CFM}}(\theta)# is as follows,
+However, this loss is intractable since the form of $p_{\text{data}}(z)$ is unknown. A key result from Flow Matching (Lipman et al., 2023) shows it is proportional to a tractable objective,i.e., $L_{\text{FM}}(\theta) = L_{\text{CFM}}(\theta) + C$ where $C$ is a constant free of $\theta$ and $L_{\text{CFM}}(\theta)$ is as follows,
 
 $$
 \begin{align}
