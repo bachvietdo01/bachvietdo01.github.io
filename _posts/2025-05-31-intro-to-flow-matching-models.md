@@ -253,7 +253,7 @@ path = GaussianConditionalProbabilityPath(
 ).to(device)
 ```
 
-### Step 2: learn the vector filed with an MLP neural net
+### Step 2: learn the vector field with an MLP neural net
 
 In the following, we choose $u_t^{\theta}(x)$ to be an MLP and caclulate the Conditional Flow Matching loss $L_{\text{CFM}}(\theta)$.
 
@@ -342,6 +342,8 @@ plot_generated_sample(xts, ts, p_init, p_data, scale = PARAMS['scale'], num_samp
 <p align="center">
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_sampled_gm.png?raw=true" alt="vectorfieldflow" width="1000"/>
 </p>
+
+## Reference
 
 
 
