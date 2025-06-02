@@ -85,7 +85,7 @@ L_{\text{CFM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } \lVer
 \end{align}
 $$
 
-where $u_t( |z) = ( \dot \alpha_t -  \frac{\dot \beta_t}{\beta_t} \alpha_t )z + \frac{\dot \beta_t}{\beta_t} x$ as shown in the last section.
+where the form of $u_t(x|z)$ is shown in the last section.
 
 
 ## Putting it all together into practice
