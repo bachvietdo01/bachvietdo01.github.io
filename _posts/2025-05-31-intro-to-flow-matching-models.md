@@ -72,7 +72,7 @@ The vector field $u_t^{\text{target}}(x)$ contains all we need to generate the p
 
 $$
 \begin{align}
-L_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } \norm{u_t^{\text{target}}(x) - u_t^{\theta}(x)}{2} &
+L_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \text{Unif}[0,1], x \sim p_t } \lVert u_t^{\text{target}}(x) - u_t^{\theta}(x) \lVert^2 &
 \end{align}
 $$
 
