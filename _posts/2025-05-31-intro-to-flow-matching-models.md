@@ -262,7 +262,7 @@ path = GaussianConditionalProbabilityPath(
 
 ### Step 2: learn the vector field with an MLP neural net
 
-In the following, we choose $u_t^{\theta}(x)$ to be an MLP and caclulate the Conditional Flow Matching loss $L_{\text{CFM}}(\theta)$.
+In the following, we choose $u_t^{\theta}(x)$ to be an MLP and optimize $\theta$ to minimize the Conditional Flow Matching loss $L_{\text{CFM}}(\theta)$.
 
 ```
 class MLPVectorField(torch.nn.Module):
