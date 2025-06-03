@@ -43,7 +43,7 @@ p(x \mid z) = N(\cdot \mid \alpha_t z , \beta_t^2 \cdot I)
 \end{align}
 $$
 
-where the noise scheduler is defined as $\alpha_t = t$ and $\beta_t^2 = 1 - t$, and the data point $z \sim p_{\text{data}}(\cdot)$.
+where $\alpha_t = t$ and $\beta_t^2 = 1 - t$ are noise schedulers, and the data point $z \sim p_{\text{data}}(\cdot)$.
 
 By definition, we see that $p_0(\cdot) = p_{\text{init}}(\cdot) = N(\cdot \mid 0, I)$ and $p_1(\cdot) = \delta_z$. In other words, the conditional probability path $p_t(\cdot \mid z)$ starts from $p_{\text{init}}$ and converges to the data point $z$ as $t \to 1$.
 
