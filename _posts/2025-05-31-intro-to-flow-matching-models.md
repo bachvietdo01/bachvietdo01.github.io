@@ -119,7 +119,7 @@ plot_comparison_heatmap(p_init, p_data, PARAMS['scale'])
 </p>
 
 
-### Step 1: build the Gaussin Conditional Probability Path
+### Step 1: build the Gaussian Conditional Probability Path
 
 We define the noise schedulers, $\alpha_t = t$ and $\beta_t = \sqrt{1-t}$, and so  $\dot \alpha_t = 1$ and $\dot \beta_t = -\cfrac{1}{2\sqrt{1-t}}$.
 
