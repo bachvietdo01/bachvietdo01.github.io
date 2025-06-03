@@ -63,7 +63,7 @@ u_t(x \mid z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t 
 \end{align}
 $$
 
-where $\dot \alpha_t = \frac{d}{dt} \alpha_t$ and $\dot \beta_t = \frac{d}{dt} \beta_t$. With ths result, if we define
+where $\dot \alpha_t = \frac{d}{dt} \alpha_t$ and $\dot \beta_t = \frac{d}{dt} \beta_t$. With this result, if we define
 
 $$
 \begin{align}
