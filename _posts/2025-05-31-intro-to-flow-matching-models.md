@@ -59,7 +59,7 @@ For $X_t$ to be the solution of $\frac{d}{dt} X_t = u_t(X_t \mid z)$, it is true
 
 $$
 \begin{align}
-u_t( |z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \cfrac{\dot \beta_t}{\beta_t} x &
+u_t(x \midz) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \cfrac{\dot \beta_t}{\beta_t} x &
 \end{align}
 $$
 
