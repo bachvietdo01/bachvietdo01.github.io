@@ -39,7 +39,7 @@ However, directly building this path from the marginal $p_{\text{data}}$ is high
 
 $$
 \begin{align}
-p(x \mid z) = N(\cdot | \alpha_t z | \beta_t^2 \cdot I)
+p(x \mid z) = N(\cdot \mid \alpha_t z , \beta_t^2 \cdot I)
 \end{align}
 $$
 
