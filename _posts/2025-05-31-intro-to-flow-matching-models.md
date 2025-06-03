@@ -39,7 +39,7 @@ However, directly building this path from the marginal $p_{\text{data}}$ is high
 
 $$
 \begin{align}
-p(x | z) = N(\cdot \mid \alpha_t z , \beta_t^2 \cdot I)
+p(x \mid z) = N(\cdot \mid \alpha_t z , \beta_t^2 \cdot I)
 \end{align}
 $$
 
@@ -59,7 +59,7 @@ For $X_t$ to be the solution of $\frac{d}{dt} X_t = u_t(X_t \mid z)$, it is true
 
 $$
 \begin{align}
-u_t(x \midz) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \cfrac{\dot \beta_t}{\beta_t} x &
+u_t(x \mid z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t \right )z + \cfrac{\dot \beta_t}{\beta_t} x &
 \end{align}
 $$
 
