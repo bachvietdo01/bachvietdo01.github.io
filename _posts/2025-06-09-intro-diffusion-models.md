@@ -62,7 +62,7 @@ Under Gaussian Probability path, it can be easily show that,
 
 $$
 \begin{align}
-u_t(x) = \eft( \beta_t^2 \cfrac{\dot \alpha_t}{\alpha_t} - \dot \beta_t \beta_t  \right) \nabla \log p_t(x) + \cfrac{\dot \alpha_t}{\alpha_t}x
+u_t(x) = \left( \beta_t^2 \cfrac{\dot \alpha_t}{\alpha_t} - \dot \beta_t \beta_t  \right) \nabla \log p_t(x) + \cfrac{\dot \alpha_t}{\alpha_t}x
 \end{align}
 $$
 
