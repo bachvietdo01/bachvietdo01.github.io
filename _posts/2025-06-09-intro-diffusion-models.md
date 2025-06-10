@@ -78,7 +78,7 @@ This form of (1) suggests that to simulate the SDE, we only need to learn the sc
 
 $$
 \begin{align}
-L_{\text{SM}}(\theta) = \mathbb{E} \lVert s^{\theta}_t(x) - \log p_t(x)\rVert 
+L_{\text{SM}}(\theta) = \mathbb{E} \lVert s^{\theta}_t(x) - \log p_t(x)\rVert^2 
 \end{align}
 $$
 
@@ -86,7 +86,7 @@ Unfortunately, since the form of the density $p_{\text{data}}(z)$ is generally u
 
 $$
 \begin{align}
-L_{\text{CSM}}(\theta) =  \mathbb{E} \lVert s^{\theta}_t(x) - \log p_t(x \mid z)\rVert 
+L_{\text{CSM}}(\theta) =  \mathbb{E} \lVert s^{\theta}_t(x) - \log p_t(x \mid z)\rVert^2 
 \end{align}
 $$
 
