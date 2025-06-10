@@ -66,13 +66,16 @@ u_t(x) = \left( \beta_t^2 \cfrac{\dot \alpha_t}{\alpha_t} - \dot \beta_t \beta_t
 \end{align}
 $$
 
-As such, the SDE $(1)$ can be rewritten as follows,
+As such, the SDE $(1)$ can be rewritten with only score function,
 
 $$
 \begin{align}
 dX_t = \left( \beta_t^2 \cfrac{\dot \alpha_t}{\alpha_t} - \dot \beta_t \beta_t  + \frac{\sigma_t^2}{2} \right) \cdot \nabla \log p_t(X_t) dt + \sigma_t d W_t 
 \end{align}
 $$
+
+This form of (1) suggests that to simulate the SDE, we only need to learn the score function $\nabla \log p_t(x)$—which we approximate using a neural network. This is the core idea behind Score Matching Diffusion Models.
+
 
 
 ## Reference
