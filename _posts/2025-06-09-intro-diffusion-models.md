@@ -16,7 +16,7 @@ A common view of diffusion models is learning to reverse a forward process that 
 
 $$
 \begin{aligned}
-dX_t = u_t(X_t)dt + \frac{\sigma_t^2}{2} \log \nabla \log p_t(X_t) dt + \sigma_t d W_t \quad (1)
+dX_t = u_t(X_t)dt + \frac{\sigma_t^2}{2} \cdot \nabla \log p_t(X_t) dt + \sigma_t d W_t \quad (1)
 \end{aligned}
 $$
 
