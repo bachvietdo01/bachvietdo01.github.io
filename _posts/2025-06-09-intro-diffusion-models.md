@@ -58,7 +58,7 @@ Using Bayes’ rule, the marginal distribution is $p_t(x) = \int p_t(x \mid z) p
 
 ## Conditional Score Matching Loss Objective
 
-Under Gaussian Probability path, it can be easily show that,
+Under Gaussian Probability path, it can be show that,
 
 $$
 \begin{align}
