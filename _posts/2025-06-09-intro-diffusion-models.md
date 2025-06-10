@@ -33,6 +33,12 @@ The SDE $(1)$ implies that for sufficiently small $h > 0$, $X_{t+h} = X_t + h\cd
 
 ## Construct Conditional and Marginal Probability Path
 
+<p align="center">
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_gcp.png?raw=true" alt="a1_gcp" width="380"/>
+<br>
+<em>Gaussian Conditionn path converges to data point z as time t goes to 1</em>
+</p>
+
 As in the Flow Matching setup, given data samples $z_1, z_2, \ldots, z_n \sim p_{\text{data}}$, we define a conditional probability path $p_0(\cdot \mid z), \ldots, p_t(\cdot \mid z), \ldots, p_1(\cdot \mid z)$. A common choice is a conditional Gaussian: $p_t(\cdot \mid z) := \mathcal{N}(\cdot \mid \alpha_t z, \beta_t^2 I)$, where $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
 
 As shown in the Flow Matching introduction, this defines a deterministic flow solving the ODE $\frac{dX_t}{dt} = u_t(X_t \mid z)$ with
@@ -40,11 +46,7 @@ $u_t(x \mid z) = \left(\dot{\alpha}_t - \frac{\dot{\beta}_t}{\beta_t} \alpha_t \
 
 Using Bayes’ rule, the marginal distribution is $p_t(x) = \int p_t(x \mid z) p_{\text{data}}(z), dz$. It can be shown that $u_t$ and $p_t$ satisfy the Fokker–Planck equation, and by Theorem 15 of Holderrieth et al. (2025), if $X_t$ solves the SDE $(1)$, then $X_t$ follows a marginal probability path with $X_1 \sim p_{\text{data}}$.
 
-<p align="center">
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_gcp.png?raw=true" alt="a1_gcp" width="380"/>
-<br>
-<em>Gaussian Conditionn path converges to data point z as time t goes to 1</em>
-</p>
+
 
 ## Reference
 
