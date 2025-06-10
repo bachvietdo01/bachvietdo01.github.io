@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Flow Matching: A Gentle Intro to Flow Matching Models"
+title: "A Gentle Intro to Flow Matching Models"
 author: "Bach Do"
 categories: journal
 tags: [documentation,sample]
