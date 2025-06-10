@@ -22,7 +22,7 @@ $$
 \end{align}
 $$
 
-In contrast, diffusion models are stochastic flows, the solutions to the below Stochastic Differential Equation:
+In contrast, diffusion models are stochastic flows, the solutions to the Stochastic Differential Equation:
 
 $$
 \begin{align}
