@@ -33,9 +33,12 @@ The SDE $(1)$ implies that for sufficiently small $h > 0$, $X_{t+h} = X_t + h\cd
 
 ## Construct Conditional and Marginal Probability Path
 
-As in Flow Matching setup, given a data sample $z_1, z_2, \ldots, z_n \sim p_{\text{data}}$, we first construct a conditional probability path $p_0(\cdot \mid z), \ldots, p_t(\cdot \mid z), \ldots, p_1(\cdot \mid z)$. A common choice in the literature is Conditional Gassian path $p_t(\cdot \mid z) := N(\cdot \mid \alpha_t z \\;, \\; \beta_t^2 I)$ where $\alpha_t$ and $\beta_t$ are noise schedulers and $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
+As in the Flow Matching setup, given data samples $z_1, z_2, \ldots, z_n \sim p_{\text{data}}$, we define a conditional probability path $p_0(\cdot \mid z), \ldots, p_t(\cdot \mid z), \ldots, p_1(\cdot \mid z)$. A common choice is a conditional Gaussian: $p_t(\cdot \mid z) := \mathcal{N}(\cdot \mid \alpha_t z, \beta_t^2 I)$, where $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
 
-As explained in the [Flow Matching intro](), It is straightforward to show the defined probability is the solution to the ODE $\frac{d X_t}{dt} = u_t(X_t \mid z)$ where $u_t(x \mid z) = (\dot \alpha_t - \frac{\dot \beta_t}{\beta_t} \alpha_t) z + \frac{\dot \beta_t}{\beta}x$.
+As shown in the Flow Matching introduction, this defines a deterministic flow solving the ODE $\frac{dX_t}{dt} = u_t(X_t \mid z)$ with
+$u_t(x \mid z) = \left(\dot{\alpha}_t - \frac{\dot{\beta}_t}{\beta_t} \alpha_t \right) z + \frac{\dot{\beta}_t}{\beta_t} x$.
+
+Using Bayes’ rule, the marginal distribution is $p_t(x) = \int p_t(x \mid z) p_{\text{data}}(z), dz$. It can be shown that $u_t$ and $p_t$ satisfy the Fokker–Planck equation, and by Theorem 15 of Holderrieth et al. (2025), if $X_t$ solves the corresponding SDE, then $X_t$ follows a marginal path with $X_1 \sim p_{\text{data}}$.
 
 ## Reference
 
