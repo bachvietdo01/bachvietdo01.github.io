@@ -74,7 +74,7 @@ dX_t = \left( \beta_t^2 \cfrac{\dot \alpha_t}{\alpha_t} - \dot \beta_t \beta_t  
 \end{align}
 $$
 
-This form of (1) suggests that to simulate the SDE, we only need to learn the score function $\nabla \log p_t(x)$—which we approximate using a neural network. This is the core idea behind Score Matching Diffusion Models. The natural loss objective is the Score Matching loss $$\lvert \rvert $$
+This form of (1) suggests that to simulate the SDE, we only need to learn the score function $\nabla \log p_t(x)$—which we approximate using a neural network. This is the core idea behind Score Matching Diffusion Models. The natural loss objective is the Score Matching loss $$\lVert s^{\theta}_t(x) - \log p_t(x0 \rVert $$
 
 
 
