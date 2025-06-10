@@ -29,13 +29,13 @@ Here, $X_t \sim p_t(\cdot)$ traces the marginal probability path, $u_t(X_t)$ is 
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a2_sde_traj.png?raw=true" alt="sde_traj" width="450"/> 
 </p>
 
-The SDE $(1)$ implies that for sufficiently small $h > 0$, $X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla \log p_t(X_t) + \sqrt{h} \cdot N(\cdot | 0 \\;,\\; I)$. The last term, $\sqrt{h} \cdot N(\cdot | 0 \\;,\\; I)$, is the outcome of taking a small changes of Brownian Motion $dW_t$.
+The SDE $(1)$ implies that for sufficiently small $h > 0$, $X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla \log p_t(X_t) + \sqrt{h} \cdot N(\cdot | 0 \\;,\\; I)$. The last term, $\sqrt{h} \cdot N(\cdot | 0 , I)$, is the outcome of taking a small changes of Brownian Motion $dW_t$.
 
 ## Construct Conditional and Marginal Probability Path
 
-As in Flow Matching setup, given a data sample $z_1, z_2, \ldots, z_n$, we first construct a conditional probability path $p_0(\cdot \mid z), \ldots, p_t(\cdot \mid z), \ldots, p_1(\cdot \mid z)$. A common choice in the literature is Conditional Gassian path $p_t(\cdot | z) := N(\cdot \mid \alpha_t z , \\;  \beta_t^2 I)$ where $\alpha_t$ and $\beta_t$ are noise schedulers and $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
+As in Flow Matching setup, given a data sample $z_1, z_2, \ldots, z_n$, we first construct a conditional probability path $p_0(\cdot \mid z), \ldots, p_t(\cdot \mid z), \ldots, p_1(\cdot \mid z)$. A common choice in the literature is Conditional Gassian path $p_t(\cdot | z) := N(\cdot \mid \alpha_t z, \beta_t^2 I)$ where $\alpha_t$ and $\beta_t$ are noise schedulers and $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
 
-It is straightforward to show the defined probability is the solution to the ODE $\frac{d X_t}{dt} = u_t(X_t | z)$ where $u_t(x|z) = (\dot \alpha_t - \frac{\dot \beta_t}{\beta_t} \alpha_t) z + \frac{\dot \beta_t}{\beta}x$.
+As explained in the [Flow Matching intro](), It is straightforward to show the defined probability is the solution to the ODE $\frac{d X_t}{dt} = u_t(X_t \mid z)$ where $u_t(x \mid z) = (\dot \alpha_t - \frac{\dot \beta_t}{\beta_t} \alpha_t) z + \frac{\dot \beta_t}{\beta}x$.
 
 ## Reference
 
