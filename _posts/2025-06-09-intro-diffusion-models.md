@@ -58,7 +58,7 @@ Using Bayes’ rule, the marginal distribution is $p_t(x) = \int p_t(x \mid z) p
 
 ## Conditional Score Matching Loss Objective
 
-Under Gaussian Probability path, $\nabla \log p_t(x) = - \frac{x - \alpha_t z}{\beta_t^2}$. This fact can be used to show that,
+Under Gaussian Probability path, $\nabla \log p_t(x \mid z) = - \frac{x - \alpha_t z}{\beta_t^2}$. This fact can be used to show that,
 
 $$
 \begin{align}
