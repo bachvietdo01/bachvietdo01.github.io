@@ -352,5 +352,7 @@ plot_generated_sample(xts, ts, p_init, p_data, scale = PARAMS['scale'], num_samp
 
 ## Reference
 
+[1] Lipman, Y., Chen, R. T., Ben-Hamu, H., Nickel, M., & Le, M. (2022). Flow matching for generative modeling. arXiv preprint arXiv:2210.02747.
+
 
 
