@@ -22,20 +22,10 @@ $$
 
 Here, $X_t \sim p_t(\cdot)$ traces the marginal probability path, $u_t(X_t)$ is the deterministic vector field, $\sigma_t^2$ is the diffusion coefficient, and $W_t$ denotes Brownian motion.
 
-<style>
-  table td {
-    border: none !important;
-  }
-</style>
-<table>
-  <tbody>
-    <tr>
-      <td>![ode_traj](https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a2_ode_traj.png?raw=true)</td>
-      <td>![sde_traj](https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a2_sde_traj.png?raw=true)</td>
-    </tr>
-  </tbody>
-</table>
-
+<p align="center">
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a2_ode_traj.png?raw=true" alt="ode_traj" width="250"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a2_sde_traj.png?raw=true" alt="sde_traj" width="250"/> 
+</p>
 
 ## Reference
 
