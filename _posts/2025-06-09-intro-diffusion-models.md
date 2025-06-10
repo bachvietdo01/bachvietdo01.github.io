@@ -30,11 +30,12 @@ Here, $X_t \sim p_t(\cdot)$ traces the marginal probability path, $u_t(X_t)$ is 
 </p>
 
 The SDE $(1)$ implies that for sufficiently small $h > 0$, 
-$
+
+$$
 \begin{align}
-X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla \log p_t(X_t) + \sqrt{h} \cdot N(\cdot \mid 0 \\; , \\; I)
+X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla \log p_t(X_t) + \sqrt{h} \cdot N(\cdot \mid 0 \\; , \\; I).
 \end{align}
-$.
+$$
 
 The last term, $\sqrt{h} \cdot N(\cdot \mid 0 \\; , \\; I)$, is the outcome of taking a small changes of Brownian Motion $dW_t$.
 
