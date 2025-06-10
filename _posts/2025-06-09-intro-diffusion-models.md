@@ -31,6 +31,8 @@ The SDE $(1)$ implies that for sufficiently small $h > 0$, $X_{t+h} = X_t + h\cd
 
 ## Construct Conditional and Marginal Probability Path
 
+As in Flow Matching setup, given a data sample $z_1, z_2, \ldots, z_n$, we first construct a conditional probability path $p_0(\cdot|z), \ldots, p_t(\cdot |z), \ldots, p_1(\cdot | z)$. A common choice in the literature is Conditional Gassian path $p_t(\cdot | z) = N(\cdot | \alpha_t z, \beta_t^2 I)$ where $\alpha_t$ and $\beta_t$ are noise schedulers and $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
+
 ## Reference
 
 [1] Lipman, Y., Chen, R. T., Ben-Hamu, H., Nickel, M., & Le, M. (2022). Flow matching for generative modeling. arXiv preprint arXiv:2210.02747.
