@@ -78,7 +78,15 @@ This form of (1) suggests that to simulate the SDE, we only need to learn the sc
 
 $$
 \begin{align}
-L_{\text{SM}})(\theta) = \lVert s^{\theta}_t(x) - \log p_t(x)\rVert 
+L_{\text{SM}}(\theta) = \lVert s^{\theta}_t(x) - \log p_t(x)\rVert 
+\end{align}
+$$
+
+Unfortunately, since the form of the density $p_{\text{data}}(z)$ is generally unknown, $\log p_t(x)$ is intractable. However, similar to Flow Matching, it turns out $L_{\text{SM}}(\theta) = L_{\text{CSM}}(\theta) + C$ where $C$ is a constant independent of $\theta$. The Conditional Score Matching loss is given by:
+
+$$
+\begin{align}
+L_{\text{CSM}}(\theta) = \lVert s^{\theta}_t(x) - \log p_t(x \mid z)\rVert 
 \end{align}
 $$
 
