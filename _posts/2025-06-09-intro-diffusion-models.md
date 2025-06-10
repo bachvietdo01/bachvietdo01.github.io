@@ -40,6 +40,12 @@ $u_t(x \mid z) = \left(\dot{\alpha}_t - \frac{\dot{\beta}_t}{\beta_t} \alpha_t \
 
 Using Bayes’ rule, the marginal distribution is $p_t(x) = \int p_t(x \mid z) p_{\text{data}}(z), dz$. It can be shown that $u_t$ and $p_t$ satisfy the Fokker–Planck equation, and by Theorem 15 of Holderrieth et al. (2025), if $X_t$ solves the SDE $(1)$, then $X_t$ follows a marginal probability path with $X_1 \sim p_{\text{data}}$.
 
+<p align="center">
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a1_gcp.png?raw=true" alt="a1_gcp" width="380"/>
+<br>
+<em>Gaussian Conditionn path converges to data point z as time t goes to 1</em>
+</p>
+
 ## Reference
 
 [1] Lipman, Y., Chen, R. T., Ben-Hamu, H., Nickel, M., & Le, M. (2022). Flow matching for generative modeling. arXiv preprint arXiv:2210.02747.
