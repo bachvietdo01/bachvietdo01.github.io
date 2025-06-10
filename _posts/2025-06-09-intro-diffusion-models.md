@@ -29,6 +29,8 @@ Here, $X_t \sim p_t(\cdot)$ traces the marginal probability path, $u_t(X_t)$ is 
 
 The SDE $(1)$ implies that for sufficiently small $h > 0$, $X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla \log p_t(X_t) + \sqrt{h} \cdot N(\cdot | 0, I)$.
 
+## Construct Conditional and Marginal Probability Path
+
 ## Reference
 
 [1] Lipman, Y., Chen, R. T., Ben-Hamu, H., Nickel, M., & Le, M. (2022). Flow matching for generative modeling. arXiv preprint arXiv:2210.02747.
