@@ -34,9 +34,9 @@ Here, $X_t \sim p_t(\cdot)$ traces the marginal probability path, $u_t(X_t)$ is 
 The SDE $(1)$ implies that for sufficiently small $h > 0$, 
 
 $$
-\begin{align}
-X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla \log p_t(X_t) + \sqrt{h} \cdot N(\cdot \mid 0 \\; , \\; I).
-\end{align}
+\begin{aligned}
+X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla \log p_t(X_t) + \sqrt{h} \cdot N(\cdot \mid 0, I).
+\end{aligned}
 $$
 
 The last term, $\sqrt{h} \cdot N(\cdot \mid 0 \\; , \\; I)$, is the outcome of taking a small changes of Brownian Motion $dW_t$.
@@ -49,7 +49,7 @@ The last term, $\sqrt{h} \cdot N(\cdot \mid 0 \\; , \\; I)$, is the outcome of t
 <em>Gaussian Conditionn path converges to data point z as time t goes to 1</em>
 </p>
 
-As in the Flow Matching setup, given data samples $z_1, z_2, \ldots, z_n \sim p_{\text{data}}$, we define a conditional probability path $p_0(\cdot \mid z), \ldots, p_t(\cdot \mid z), \ldots, p_1(\cdot \mid z)$. A common choice is a conditional Gaussian: $p_t(\cdot \mid z) := \mathcal{N}(\cdot \mid \alpha_t z \\;, \\; \beta_t^2 I)$, where $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
+As in the Flow Matching setup, given data samples $z_1, z_2, \ldots, z_n \sim p_{\text{data}}$, we define a conditional probability path $p_0(\cdot \mid z), \ldots, p_t(\cdot \mid z), \ldots, p_1(\cdot \mid z)$. A common choice is a conditional Gaussian: $p_t(\cdot \mid z) := N(\cdot \mid \alpha_t z \\;, \\; \beta_t^2 I)$, where $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
 
 As shown in the Flow Matching introduction, this defines a deterministic flow solving the ODE $\frac{dX_t}{dt} = u_t(X_t \mid z)$ with
 $u_t(x \mid z) = \left(\dot{\alpha}_t - \frac{\dot{\beta}_t}{\beta_t} \alpha_t \right) z + \frac{\dot{\beta}_t}{\beta_t} x$.
