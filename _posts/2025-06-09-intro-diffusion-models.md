@@ -29,7 +29,14 @@ Here, $X_t \sim p_t(\cdot)$ traces the marginal probability path, $u_t(X_t)$ is 
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a2_sde_traj.png?raw=true" alt="sde_traj" width="450"/> 
 </p>
 
-The SDE $(1)$ implies that for sufficiently small $h > 0$, $X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla \log p_t(X_t) + \sqrt{h} \cdot N(\cdot \mid 0 , I)$. The last term, $\sqrt{h} \cdot N(\cdot \mid 0 \\; , \\; I)$, is the outcome of taking a small changes of Brownian Motion $dW_t$.
+The SDE $(1)$ implies that for sufficiently small $h > 0$, 
+$
+\begin{align}
+X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla \log p_t(X_t) + \sqrt{h} \cdot N(\cdot \mid 0 \\; , \\; I)
+\end{align}
+$.
+
+The last term, $\sqrt{h} \cdot N(\cdot \mid 0 \\; , \\; I)$, is the outcome of taking a small changes of Brownian Motion $dW_t$.
 
 ## Construct Conditional and Marginal Probability Path
 
