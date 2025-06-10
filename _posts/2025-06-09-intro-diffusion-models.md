@@ -43,7 +43,7 @@ The SDE $(1)$ implies that for sufficiently small $h > 0$,
 
 $$
 \begin{aligned}
-X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla \log p_t(X_t) + \sqrt{h} \cdot N(\cdot \mid 0, I).
+X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla \log p_t(X_t) + \sqrt{h} \cdot \sigma_t \cdot N(\cdot \mid 0, I).
 \end{aligned}
 $$
 
