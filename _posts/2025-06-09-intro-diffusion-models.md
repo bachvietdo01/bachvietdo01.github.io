@@ -56,6 +56,7 @@ $u_t(x \mid z) = \left(\dot{\alpha}_t - \frac{\dot{\beta}_t}{\beta_t} \alpha_t \
 
 Using Bayes’ rule, the marginal distribution is $p_t(x) = \int p_t(x \mid z) p_{\text{data}}(z), dz$. It can be shown that $u_t$ and $p_t$ satisfy the **Fokker–Planck equation**, and by Theorem 15 of Holderrieth et al. (2025), if $X_t$ solves the SDE $(1)$, then $X_t$ follows a marginal probability path with $X_1 \sim p_{\text{data}}$.
 
+## Conditional Score Matching Loss Objective
 
 
 ## Reference
