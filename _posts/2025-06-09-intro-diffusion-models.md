@@ -33,7 +33,9 @@ The SDE $(1)$ implies that for sufficiently small $h > 0$, $X_{t+h} = X_t + h\cd
 
 ## Construct Conditional and Marginal Probability Path
 
-As in Flow Matching setup, given a data sample $z_1, z_2, \ldots, z_n$, we first construct a conditional probability path $p_0(\cdot \mid z), \ldots, p_t(\cdot \mid z), \ldots, p_1(\cdot \mid z)$. A common choice in the literature is Conditional Gassian path $p_t(\cdot | z) = N(\cdot \mid \alpha_t z , \\;  \beta_t^2 I)$ where $\alpha_t$ and $\beta_t$ are noise schedulers and $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
+As in Flow Matching setup, given a data sample $z_1, z_2, \ldots, z_n$, we first construct a conditional probability path $p_0(\cdot \mid z), \ldots, p_t(\cdot \mid z), \ldots, p_1(\cdot \mid z)$. A common choice in the literature is Conditional Gassian path $p_t(\cdot | z) := N(\cdot \mid \alpha_t z , \\;  \beta_t^2 I)$ where $\alpha_t$ and $\beta_t$ are noise schedulers and $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
+
+It is straightforward to show the defined probability is the solution to the ODE $\frac{d X_t}{dt} = u_t(X_t | z)$ where $u_t(x|z) = (\dot \alpha_t - \frac{\dot beta_t}{\beta_t} \alpha_t) z + \frac{\dot \beta_t}{\beta}x$.
 
 ## Reference
 
