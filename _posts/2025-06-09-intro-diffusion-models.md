@@ -101,7 +101,7 @@ $$
 
 ## Putting it all together into Practice
 
-### Step 0: define $p_{\text{init}}$ as Standard Normal distribution and the target distribution is a 11-component mixture of normals.
+#### Step 0: define $p_{\text{init}}$ as Standard Normal distribution and the target distribution is a 11-component mixture of normals.
 
 ```
 from gaussian import Sampleable
@@ -139,7 +139,7 @@ p_data = GaussianMixture.symmetric_2D(nmodes=11, std=PARAMS["target_std"], scale
 plot_comparison_heatmap(p_init, p_data, PARAMS['scale'])
 ```
 
-### Step 1: builds Gaussian Conditional path with noise scheduler $\alpha_t = t$ and $\beta_t = \sqrt{1-t}$
+#### Step 1: builds Gaussian Conditional path with noise scheduler $\alpha_t = t$ and $\beta_t = \sqrt{1-t}$
 
 ```
 class LinearAlpha:
@@ -290,7 +290,7 @@ class GaussianConditionalProbabilityPath(nn.Module):
         return (z * alpha_t - x) / beta_t ** 2
 ```
 
-### Step 3: Learn vector field $u_t(x)$ and score $\nabla \log p_t(x)$ with MLP(s)
+#### Step 3: Learn vector field $u_t(x)$ and score $\nabla \log p_t(x)$ with MLP(s)
 
 ```
 class MLPVectorField(torch.nn.Module):
@@ -399,6 +399,24 @@ score_model = MLPScore(dim=2, hiddens=[1024,16])
 # Construct trainer
 trainer = ConditionalScoreMatchingTrainer(path, score_model)
 losses = trainer.train(num_epochs=5000, device=device, lr=1e-3, batch_size=1000)
+```
+
+#### Step 4: Generate sample by simulating SDE with learned vector field and score function
+
+```
+from sde import LangevinFlowSDE, EulerMaruyamaSimulator
+
+num_samples = 1000
+num_timesteps = 300
+num_marginals = 3
+
+sigma = 0.5
+
+sde = LangevinFlowSDE(flow_model, score_model, sigma)
+simulator = EulerMaruyamaSimulator(sde)
+x0 = path.p_init.sample(num_samples) # (num_samples, 2)
+ts = torch.linspace(0.0, 1.0, num_timesteps).view(1,-1,1).expand(num_samples,-1,1).to(device) # (num_samples, nts, 1)
+xts = simulator.simulate_with_trajectory(x0, ts) # (bs, nts, dim)
 ```
 
 
