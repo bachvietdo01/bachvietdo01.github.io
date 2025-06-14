@@ -79,7 +79,7 @@ As such, the SDE $(1)$ can be rewritten with only score function,
 
 $$
 \begin{align}
-dX_t = \left( \beta_t^2 \cfrac{\dot \alpha_t}{\alpha_t} - \dot \beta_t \beta_t  + \frac{\sigma_t^2}{2} \right) \cdot \nabla \log p_t(X_t) dt + \sigma_t d W_t 
+dX_t = \left( \beta_t^2 \cfrac{\dot \alpha_t}{\alpha_t} - \dot \beta_t \beta_t  + \frac{\sigma_t^2}{2} \right) \nabla \log p_t(X_t) dt + \sigma_t d W_t 
 \end{align}
 $$
 
