@@ -16,7 +16,7 @@ This introduction explains the core idea of diffusion models as stochastic flows
 
 Like Flow Matching models, Diffusion models learn a probability path from an initial "noise" distribution to a target data distribution. A common view of diffusion models is learning to reverse a forward process that progressively diffuse data into noise. However, they can also be seen as a stochastic counterpart to flow matching models (see Holderrieth et al., 2025). 
 
-[Flow matching](https://bachvietdo01.github.io/intro-to-flow-matching-models) constructs a probability path $\{ X_t \}$ with time index $t \in [0,1]$ where $X_0 \sim p_{\text{init}}$ and $X_1 \sim p_{\teext{data}}$ where the trajectories $\{ X_t \}$ is the solution to the following ODE,
+[Flow matching](https://bachvietdo01.github.io/intro-to-flow-matching-models) constructs a probability path $\{ X_t \}$ with time index $t \in [0,1]$ where $X_0 \sim p_{\text{init}}$ and $X_1 \sim p_{\text{data}}$ where the trajectories $\{ X_t \}$ is the solution to the following ODE,
 
 $$
 \begin{align}
