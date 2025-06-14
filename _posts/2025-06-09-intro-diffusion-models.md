@@ -444,6 +444,18 @@ plot_generated_sample(xts, ts, p_init, p_data, scale = PARAMS['scale'], num_time
 
 [2] Holderrieth, Peter, and Ezra Erives. "An Introduction to Flow Matching and Diffusion Models." arXiv preprint arXiv:2506.02070 (2025).
 
+[3] Sohl-Dickstein, Jascha, et al. "Deep unsupervised learning using nonequilibrium thermodynamics." International conference on machine learning. pmlr, 2015.
+
+[4] Song, Yang, and Stefano Ermon. "Generative modeling by estimating gradients of the data distribution." Advances in neural information processing systems 32 (2019).
+
+[5] Ho, Jonathan, Ajay Jain, and Pieter Abbeel. "Denoising diffusion probabilistic models." Advances in neural information processing systems 33 (2020): 6840-6851.
+
+[6] Song, Yang, et al. "Score-based generative modeling through stochastic differential equations." arXiv preprint arXiv:2011.13456 (2020).
+
+[7] Karras, Tero, et al. "Elucidating the design space of diffusion-based generative models." Advances in neural information processing systems 35 (2022): 26565-26577.
+
+
+
 
 
 
