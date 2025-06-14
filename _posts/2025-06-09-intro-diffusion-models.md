@@ -28,7 +28,7 @@ In contrast, diffusion models are stochastic flows, the solutions to the Stochas
 
 $$
 \begin{align}
-dX_t = u_t(X_t)dt + \frac{\sigma_t^2}{2} \cdot \nabla \log p_t(X_t) dt + \sigma_t d W_t \quad (1)
+dX_t = u_t(X_t)dt + \frac{\sigma_t^2}{2} \cdot \nabla_x \log p_t(X_t) dt + \sigma_t d W_t \quad (1)
 \end{align}
 $$
 
@@ -63,15 +63,15 @@ Similar to Flow Matching, given data sample $z \sim p_{\text{data}}$, we first d
 As shown in the Flow Matching introduction, this defines a deterministic flow solving the ODE $\frac{dX_t}{dt} = u_t(X_t \mid z)$ with
 $u_t(x \mid z) = \left(\dot{\alpha}_t - \frac{\dot{\beta}_t}{\beta_t} \alpha_t \right) z + \frac{\dot{\beta}_t}{\beta_t} x$.
 
-Using Bayes’ rule, the marginal distribution is $p_t(x) = \int p_t(x \mid z) p_{\text{data}}(z), dz$. It can be shown that $u_t$ and $\nabla \log p_t$ satisfy the **Fokker–Planck equation**, and by Theorem 15 of Holderrieth et al. (2025), if $X_t$ solves the SDE $(1)$, then $X_t$ follows a marginal probability path with $X_1 \sim p_{\text{data}}$.
+Using Bayes’ rule, the marginal distribution is $p_t(x) = \int p_t(x \mid z) p_{\text{data}}(z), dz$. It can be shown that $u_t$ and $\nabla_x \log p_t$ satisfy the **Fokker–Planck equation**, and by Theorem 15 of Holderrieth et al. (2025), if $X_t$ solves the SDE $(1)$, then $X_t$ follows a marginal probability path with $X_1 \sim p_{\text{data}}$.
 
 ## Conditional Score Matching Loss Objective
 
-Under Gaussian Probability path, $\nabla \log p_t(x \mid z) = - \frac{x - \alpha_t z}{\beta_t^2}$. This fact can be used to show that,
+Under Gaussian Probability path, $\nabla_x \log p_t(x \mid z) = - \frac{x - \alpha_t z}{\beta_t^2}$. This fact can be used to show that,
 
 $$
 \begin{align}
-u_t(x) = \left( \beta_t^2 \cfrac{\dot \alpha_t}{\alpha_t} - \dot \beta_t \beta_t  \right) \nabla \log p_t(x) + \cfrac{\dot \alpha_t}{\alpha_t}x
+u_t(x) = \left( \beta_t^2 \cfrac{\dot \alpha_t}{\alpha_t} - \dot \beta_t \beta_t  \right) \nabla_x \log p_t(x) + \cfrac{\dot \alpha_t}{\alpha_t}x
 \end{align}
 $$
 
@@ -79,11 +79,11 @@ As such, the SDE $(1)$ can be rewritten with only score function,
 
 $$
 \begin{align}
-dX_t = \left( \beta_t^2 \cfrac{\dot \alpha_t}{\alpha_t} - \dot \beta_t \beta_t  + \frac{\sigma_t^2}{2} \right) \nabla \log p_t(X_t) dt + \sigma_t d W_t 
+dX_t = \left( \beta_t^2 \cfrac{\dot \alpha_t}{\alpha_t} - \dot \beta_t \beta_t  + \frac{\sigma_t^2}{2} \right) \nabla_x \log p_t(X_t) dt + \sigma_t d W_t 
 \end{align}
 $$
 
-This form of (1) suggests that to simulate the SDE, we just need to learn the score function $\nabla \log p_t(x)$ using a neural network. This is the core idea behind Score Matching Diffusion Models. The natural loss objective is the Score Matching loss with $s^{\theta}_t$ a neural net with parameter $\theta$:
+This form of (1) suggests that to simulate the SDE, we just need to learn the score function $\nabla_x \log p_t(x)$ using a neural network. This is the core idea behind Score Matching Diffusion Models. The natural loss objective is the Score Matching loss with $s^{\theta}_t$ a neural net with parameter $\theta$:
 
 $$
 \begin{align}
@@ -297,7 +297,7 @@ class GaussianConditionalProbabilityPath(nn.Module):
         return (z * alpha_t - x) / beta_t ** 2
 ```
 
-#### Step 3: Learn vector field $u_t(x)$ and score $\nabla \log p_t(x)$ with MLP(s)
+#### Step 3: Learn vector field $u_t(x)$ and score $\nabla_x \log p_t(x)$ with MLP(s)
 
 ```
 class MLPVectorField(torch.nn.Module):
