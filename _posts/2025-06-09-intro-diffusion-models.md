@@ -99,7 +99,7 @@ L_{\text{CSM}}(\theta) =  \mathbb{E} \lVert s^{\theta}_t(x) - \log p_t(x \mid z)
 \end{align}
 $$
 
-## Putting it all together into Practice
+## Putting it all together into practice
 
 Alright, that's enough foundation and let's dive into the codes.
 
