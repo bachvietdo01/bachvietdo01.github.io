@@ -58,7 +58,7 @@ The last term, $\sqrt{h} \cdot N(\cdot \mid 0 \\; , \\; I)$, is the outcome of t
 <em>Gaussian Conditionn path converges to data point z as time t goes to 1</em>
 </p>
 
-Similar to Flow Matching, given data sample $z \sim p_{\text{data}}$, we first define a conditional probability path $p_0(\cdot \mid z), \ldots, p_t(\cdot \mid z), \ldots, p_1(\cdot \mid z)$. A common choice is a conditional Gaussian: $p_t(\cdot \mid z) := N(\cdot \mid \alpha_t z \\;, \\; \beta_t^2 I)$, where the noise schedulers $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
+Similar to Flow Matching, given data sample $z \sim p_{\text{data}}$, we first define a conditional probability path $p_0(\cdot \mid z), \ldots, p_t(\cdot \mid z), \ldots, p_1(\cdot \mid z)$ tending to the point mass $\delta_z(\cdot)$. A common choice is a conditional Gaussian: $p_t(\cdot \mid z) := N(\cdot \mid \alpha_t z \\;, \\; \beta_t^2 I)$, where the noise schedulers $\alpha_t \to 1$ and $\beta_t^2 \to 0$ as $t \to 1$.
 
 As shown in the Flow Matching introduction, this defines a deterministic flow solving the ODE $\frac{dX_t}{dt} = u_t(X_t \mid z)$ with
 $u_t(x \mid z) = \left(\dot{\alpha}_t - \frac{\dot{\beta}_t}{\beta_t} \alpha_t \right) z + \frac{\dot{\beta}_t}{\beta_t} x$.
