@@ -101,6 +101,8 @@ $$
 
 ## Putting it all together into Practice
 
+Alright, that's enough foundation and let's dive into the codes.
+
 #### Step 0: define $p_{\text{init}}$ as Standard Normal distribution and the target distribution is a 11-component mixture of normals.
 
 ```
