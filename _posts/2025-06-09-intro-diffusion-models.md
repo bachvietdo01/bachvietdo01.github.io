@@ -427,6 +427,10 @@ xts = simulator.simulate_with_trajectory(x0, ts) # (bs, nts, dim)
 ```
 
 ```
+from importlib import reload
+from ultility import plot_generated_sample
+
+plot_generated_sample(xts, ts, p_init, p_data, scale = PARAMS['scale'], num_timesteps=num_timesteps, num_marginals=num_marginals)
 ```
 
 <p align="center">
