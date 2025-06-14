@@ -426,6 +426,13 @@ ts = torch.linspace(0.0, 1.0, num_timesteps).view(1,-1,1).expand(num_samples,-1,
 xts = simulator.simulate_with_trajectory(x0, ts) # (bs, nts, dim)
 ```
 
+```
+```
+
+<p align="center">
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a2_sampled_gm.png?raw=true" alt="vectorfieldflow" width="1000"/>
+</p>
+
 
 ## Reference
 
