@@ -31,7 +31,7 @@ $$
 \end{aligned}
 $$
 
-where $H(P) = - \sum_{i,j} P_{i,j} \log P_{i,j} \propto -\text{KL}(P, a \otimes b)$.
+where $H(P) = - \sum_{i,j} P_{i,j} \log P_{i,j} \propto -\text{KL}(P, a \otimes b)$. where KL is the Kullback–Leibler divergence and $a \otimes b$ are the joint distribution of $a$ and $b$.
 
 ## From Stochastic to Deterministic Matching
 
