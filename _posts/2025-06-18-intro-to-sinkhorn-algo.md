@@ -26,10 +26,12 @@ This is a linear programming problem, and the typical solvers such has network s
 
 $$
 \begin{aligned}
-&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} - \eps H(P) \\
+&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} - \epsilon H(P) \\
 &\text{st. } \sum_i P_{i,j} = a, \sum_j P_{i,j} = b
 \end{aligned}
 $$
+
+where $H(P) = - \sum_{i,j} P_{i,j} \log P_{i,j}$.
 
 ## From Stochastic to Deterministic Matching
 
