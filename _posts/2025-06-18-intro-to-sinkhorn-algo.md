@@ -56,7 +56,17 @@ As such, define vectors $u:= \exp \left( \frac{\lambda_{1, i}}{\epsilon} \right)
 $$
 \begin{aligned}
 && P^\ast = \text{diag}(u) \cdot K \cdot \text{diag}(v) \\
-&& \text{diag}(u) \cdot K \cdot \text{diag}(v) \cdot 1_m = 1 \\
+&& \text{diag}(u) \cdot K \cdot \text{diag}(v) \cdot 1_m = a \\
+&& \text{diag}(v) \cdot K^T \cdot \text{diag}(u) \cdot 1_n = b \\
+\end{aligned}
+$$
+
+Eqivalently,
+
+$$
+\begin{aligned}
+&& u \odot Kv = a \\
+&& v \odot (K^T u) = b
 \end{aligned}
 $$
 
