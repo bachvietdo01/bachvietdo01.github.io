@@ -43,6 +43,7 @@ $$
 \begin{aligned}
 &\cfrac{d L(P, \lambda_1, \lambda_2)}{dP} = 0 \\
 \iff &\cfrac{d L}{dP} \left(  < P, C> - <\lambda_1, P 1_m - a> - <\lambda_2, P^T 1_n - b> - \epsilon < P, \log P > \right)   = 0 \\
+\iff & C - \lambda_1^T 1_n - 1_m^T \lambda_2 - \epsilon \log P - \epsilon 1_{m \times n} = 0
 \end{aligned}
 $$
 
