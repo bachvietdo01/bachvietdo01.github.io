@@ -51,7 +51,7 @@ $$
 
 Here $exp(\cdot)$ and $\log(\cdot)$ means element-wise application to the matrix. Moreover, $\lambda_1 \cdot 1^T$ is a matrix of repeated rows and $1 \cdot \lambda_2^T$ matrix of repated collumns. Thus, we have $\lambda_1 1_n^T = \text{diag}(\lambda_1) \cdot 1_{n \times n}$ and $1_m \lambda_2^T =  1_{m \times m} \cdot \text{diag}(\lambda_2)$ where diag$(\cdot)$ operator creates a diagional matrix with the vector argument. 
 
-As such, define vectors $u:= \exp \left ( \cfrac{\lambda_{1, i}}{\epsilon} \right )_i$, $v := \exp \left ( \cfrac{\lambda_{2, i}}{\epsilon} \right )_j$ and matrix $K =  \exp \left ( \cfrac{-C }{\epsilon}  \right )$. The optimality condition implies,
+As such, define vectors $u= \exp \left( \cfrac{\lambda_{1, i}}{\epsilon} \right)$ and $v = \exp \left( \cfrac{\lambda_{2, i}}{\epsilon} \right)_j$ and matrix $K =  \exp \left ( \cfrac{-C }{\epsilon}  \right )$. The optimality condition implies,
 
 $$
 \begin{aligned}
