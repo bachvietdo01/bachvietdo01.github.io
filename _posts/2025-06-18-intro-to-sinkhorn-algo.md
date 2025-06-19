@@ -37,7 +37,7 @@ Under suitable conditions, (2) admits an unique solution $P_{\epsilon}^\ast$. Le
 
 ## Sinkhorn Algorithm
 
-For discrete finite measures, the derivation is surprisingly straightforward, involving only basic calculus. Let $1_m \in \mathbb{R}^m$, $1_n \in \mathbb{R}^n$, and $1_{m \times n} \in \mathbb{R}^{m \times n}$ denote vectors and a matrix of ones. The optimality conditions for the dual form (2) can be compactly expressed in matrix form using the dot product $\langle \cdot, \cdot \rangle$ and Lagrange multipliers $\lambda_1 \in \mathbb{R}^m$ and $\lambda_2 \in \mathbb{R}^n$.
+For discrete finite measures, the derivation is surprisingly straightforward, involving only basic calculus. Let $1_m \in R^m$, $1_n \in R^n$, and $1_{m \times n} \in R^{m \times n}$ denote vectors and a matrix of ones. The optimality conditions for the dual form of (2) can be compactly expressed in matrix form using the dot product $\langle \cdot, \cdot \rangle$ and Lagrange multiplier vector $\lambda_1 \in R^m$ and $\lambda_2 \in R^n$,
 
 $$
 \begin{aligned}
