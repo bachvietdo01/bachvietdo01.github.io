@@ -22,16 +22,22 @@ $$
 \end{aligned}
 $$
 
-Note that this is a Linear Progamming problem of which the common solvers like network simplex or interior point has cubic time complexity $O(n^3)$. This can be computationally expensive if the discrete distributions are supported on a large number of "bins". Cuturi, 2013 presented an intriguing idea for a more efficent algorithm. The author formulated the optimization with an entropic regularization term.
+This is a linear programming problem, and the typical solvers such has network simplex or interior point have cubic time complexity $O(n^3)$. These approaches become computationally expensive when the discrete distributions have many support bins. Cuturi (2013) proposed a computionally efficient algorithm by introducing an entropic regularization term to the optimization,
 
+$$
+\begin{aligned}
+&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} - \eps H(P) \\
+&\text{st. } \sum_i P_{i,j} = a, \sum_j P_{i,j} = b
+\end{aligned}
+$$
 
 ## From Stochastic to Deterministic Matching
 
 <p align="center">
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps100.png?raw=true" alt="eps100" width="160"/>
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps020.png?raw=true" alt="eps020" width="170"/>
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps005.png?raw=true" alt="eps005" width="155"/>
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps000.png?raw=true" alt="eps000" width="170"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps100.png?raw=true" alt="eps100" width="190"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps020.png?raw=true" alt="eps020" width="200"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps005.png?raw=true" alt="eps005" width="185"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps000.png?raw=true" alt="eps000" width="200"/>
 <br>
 <em>Optimal Matching solutions with different epsilons. Image Credit: G. Peyre’s twitter account</em>
 </p>
