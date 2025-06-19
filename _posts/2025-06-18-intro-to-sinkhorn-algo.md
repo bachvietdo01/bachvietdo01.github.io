@@ -37,7 +37,7 @@ Under suitable conditions, (2) admits an unique solution $P_{\epsilon}^\ast$. Le
 
 ## Sinkhorn Algorithm
 
-The optimal condition for for the dual form $(2)$ can be compactly written in matrix format with Larange multipliers $\lambda_1 \in R^{m}$ and $\lambda_2 \in R^{n}$,
+In the following, we denote $1_m \in R^m$ and $1_n \in R^n$ and $1_{m \times n} \in R^{m \times n}$ are vectors and matrix of only one elemnts   The optimal condition for for the dual form $(2)$ can be compactly written in matrix format with Larange multipliers $\lambda_1 \in R^{m}$ and $\lambda_2 \in R^{n}$,
 
 $$
 \begin{aligned}
