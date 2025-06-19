@@ -92,8 +92,6 @@ The iterative algorithm is easy to implement.
 import numpy as np
 
 def sinkhorn_algorithm(a, b, C, eps, max_iter=1000, threshold=1e-9):
-    """
-    """
     # Normalize cost matrix for numerical stability
     C = C / C.max()
     # Compute the Gibbs kernel
