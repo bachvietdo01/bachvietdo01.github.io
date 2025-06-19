@@ -42,7 +42,7 @@ The optimal condition for for the dual form $(2)$ can be compactly written in ma
 $$
 \begin{aligned}
 &\cfrac{d L(P, \lambda_1, \lambda_2)}{dP} = 0 \\
-&\iff \cfrac{d L}{dt} <P, C> - <\lambda_1, P 1_m - a> \left[ \right]
+\iff &\cfrac{d L}{dP} \left[ <P, C> - <\lambda_1, P 1_m - a> - <\lambda_2, P^T 1_n - b> - \epsilon <P, \log P>  \right] = 0
 \end{aligned}
 $$
 
