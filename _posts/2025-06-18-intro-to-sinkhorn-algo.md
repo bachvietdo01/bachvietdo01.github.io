@@ -12,7 +12,7 @@ image: a3_sinkhorn_algo.png
 
 ## Reference
 
-Cuturi, Marco. "Sinkhorn distances: Lightspeed computation of optimal transport." Advances in neural information processing systems 26 (2013)
+[1] Cuturi, Marco. "Sinkhorn distances: Lightspeed computation of optimal transport." Advances in neural information processing systems 26 (2013)
 
 
 
