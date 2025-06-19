@@ -51,9 +51,7 @@ $$
 \end{aligned}
 $$
 
-Refer to [Petersen, 2012](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) for common rules of matrix derivatives. Here, $\exp(\cdot)$ and $\log(\cdot)$ are applied element-wise to matrices. The term $\lambda_1 \cdot 1^T$ produces a matrix with repeated rows of $\lambda_1$, $1 \cdot \lambda_2^T$ repeated columns of $\lambda_2$. 
-
-As such, this gives  
+Refer to [Petersen, 2012](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) for common rules of matrix derivatives. Here, $\exp(\cdot)$ and $\log(\cdot)$ are applied element-wise to matrices. The term $\lambda_1 \cdot 1^T$ produces a matrix with repeated rows of $\lambda_1$, $1 \cdot \lambda_2^T$ repeated columns of $\lambda_2$. As such, this gives  
 
 - $\lambda_1 1_n^T = \text{diag}(\lambda_1) \cdot \mathbf{1}_{n \times n}$ 
 - $1_m \lambda_2^T = \mathbf{1}_{m \times m} \cdot \text{diag}(\lambda_2)$
