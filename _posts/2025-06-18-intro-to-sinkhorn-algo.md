@@ -42,7 +42,7 @@ In the following, we denote $1_m \in R^m$ and $1_n \in R^n$ and $1_{m \times n} 
 $$
 \begin{aligned}
 &\cfrac{d L(P, \lambda_1, \lambda_2)}{dP} = 0 \\
-\iff &\cfrac{d L}{dP}  < P, C> - <\lambda_1, P 1_m - a> - <\lambda_2, P^T 1_n - b> - \epsilon <P, \log P>   = 0 \\
+\iff &\cfrac{d L}{dP} \left(  < P, C> - <\lambda_1, P 1_m - a> - <\lambda_2, P^T 1_n - b> - \epsilon <P, \log P> \right)   = 0 \\
 \end{aligned}
 $$
 
