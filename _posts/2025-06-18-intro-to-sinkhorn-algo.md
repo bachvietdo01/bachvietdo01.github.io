@@ -16,6 +16,8 @@ image: a3_sinkhorn_algo.png
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps005.png?raw=true" alt="eps005" width="185"/>
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps020.png?raw=true" alt="eps020" width="200"/>
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps100.png?raw=true" alt="eps100" width="190"/>
+<br>
+<em>Optimal Matching Solution with different epsilon. Image Credit: G. Peyre’s twitter account</em>
 </p>
 
 
