@@ -35,6 +35,17 @@ where the entropy as $H(P) = -\sum_{i,j} P_{i,j} \log P_{i,j} \propto -\text{KL}
 
 Under suitable conditions, (2) admits an unique solution $P_{\epsilon}^\ast$. Let $P^\ast$ denote the unique solution to the original Kantorovich problem (1). Remarkably, $P_\epsilon^* \to P^*$ as $\epsilon \to 0$ ([see Nutz, 2022](https://www.math.columbia.edu/~mnutz/docs/EOT_lecture_notes.pdf)).
 
+## Sinkhorn Algorithm
+
+The optimal condition for for the dual form $(2)$ can be compactly written in matrix format with Larange multipliers $\lamda_1 \in R^{m}$ and $\lambda_2 \in R^{n}$,
+
+\begin{aligned}
+&\cfrac{d L(P, \lambda_1, \lambda_2)}{dP} = 0 \\
+&\iff \cfrac{d L}{dt} <P, C> - <\lambda_1, P 1_m - a> \left[ \right]
+\end{aligned}
+
+
+
 ## From Stochastic to Deterministic Matching
 
 <p align="center">
