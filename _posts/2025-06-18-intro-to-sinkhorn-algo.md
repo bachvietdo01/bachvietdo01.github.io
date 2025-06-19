@@ -31,7 +31,7 @@ $$
 \end{aligned}
 $$
 
-where $H(P) = - \sum_{i,j} P_{i,j} \log P_{i,j}$.
+where $H(P) = - \sum_{i,j} P_{i,j} \log P_{i,j} \propto \text{KL}(P, a \otimes b)$.
 
 ## From Stochastic to Deterministic Matching
 
