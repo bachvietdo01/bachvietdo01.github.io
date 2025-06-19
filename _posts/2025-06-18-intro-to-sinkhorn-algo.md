@@ -55,7 +55,16 @@ As such, define vectors $u:= \exp \left( \frac{\lambda_{1, i}}{\epsilon} \right)
 
 $$
 \begin{aligned}
-P^\ast = \text{diag}(u) \cdot K \cdot \text{diag}(v)
+&& P^\ast = \text{diag}(u) \cdot K \cdot \text{diag}(v) \\
+&& \text{diag}(u) \cdot K \cdot \text{diag}(v) \cdot 1_m = 1 \\
+\end{aligned}
+$$
+
+As $K$, the function of cost, is a constant, we can construct an iterative algorithm as follows,
+
+$$
+\begin{aligned}
+u^t 
 \end{aligned}
 $$
 
