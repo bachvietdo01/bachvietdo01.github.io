@@ -17,8 +17,8 @@ Let matrix $C(i,j) \in R^{m \times n}$ be the cost of moving an "atom" from bin 
 
 $$
 \begin{aligned}
-&\min_{P} \sum_{i,j} P_{i,j} C_{i,j} \\
-&\text{st. } \sum_i {P}_{i,j} = a, \sum_j {P}(i,j) = b
+&\min_{P} \sum_{i,j} P_{i,j} * C_{i,j} \\
+&\text{st. } \sum_i {P}_{i,j} = a, \sum_j {P}_{i,j} = b
 \end{aligned}
 $$
 
