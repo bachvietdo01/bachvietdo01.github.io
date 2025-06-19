@@ -37,7 +37,7 @@ Under suitable conditions, (2) admits an unique solution $P_{\epsilon}^\ast$. Le
 
 ## Sinkhorn Algorithm
 
-For discrete finite measures, the derivation is surprisingly straightforward, involving only basic calculus. Let $1_{m} \in \mathbb{R}^{m}$, $1_{n} \in \mathbb{R}^n$, 
+For discrete finite measures, the derivation is surprisingly straightforward, involving only basic calculus. Let $1_{m} \in \mathbb{R}^{m}, 1_{n} \in \mathbb{R}^n$, 
 
 and $1_{m \times n} \in \mathbb{R}^{m \times n}$ denote vectors and a matrix of ones. 
 
