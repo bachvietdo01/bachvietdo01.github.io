@@ -74,10 +74,12 @@ As $K$, the function of cost, is a constant, we can construct an iterative algor
 
 $$
 \begin{aligned}
-u^{t+1} &= a \odiv Kv^{t} \\
-v^{t+1} &= b \odiv (K^T u^{t+1})  
+u^{t+1} &= a / Kv^{t} \\
+v^{t+1} &= b / (K^T u^{t+1})  
 \end{aligned}
 $$
+
+where the operator $/$ is element-wise division.
 
 ## From Stochastic to Deterministic Matching
 
