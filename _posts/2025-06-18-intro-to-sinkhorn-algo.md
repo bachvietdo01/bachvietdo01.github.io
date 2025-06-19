@@ -13,11 +13,11 @@ image: a3_sinkhorn_algo.png
 
 Let $a = (a_i)$ for $i = 1, \ldots, m$ and $b = (b_j)$ for $j = 1, 2, \ldots, m$ are (finite) discrete distributions, i.e., $\sum_{i=1}^m a_i = 1 = \sum_{j=1}^m$. We can think of $a$ and $b$ as histograms, e.g., the value at bin $i$ is the probability of item $i$. 
 
-Let matrix $C(i,j) \in R^{m \times n}$ be the cost of moving an "atom" from bin $i$ of $a$ to bin $j$ of $b$, and $T(i, j) \in $R^{m \times n}$ the *coupling* matrix, describing the amount of mass transporting from bin $i$ to bin $j$. The Kantorvich probem is to solve for the optimal $P^*$,
+Let matrix $C(i,j) \in R^{m \times n}$ be the cost of moving an "atom" from bin $i$ of $a$ to bin $j$ of $b$, and $ T(i, j) \in $R^{m \times n}$ the **coupling** matrix, describing the amount of mass transporting from bin $i$ to bin $j$. The Kantorvich probem is to solve for the optimal $P^*$,
 
 $$
 \begin{aligned}
-&\min_{P} \sum_{i,j} P_{i,j} * C_{i,j} \\
+&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} \\
 &\text{st. } \sum_i P_{i,j} = a, \sum_j P_{i,j} = b
 \end{aligned}
 $$
