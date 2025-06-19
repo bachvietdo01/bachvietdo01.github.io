@@ -37,7 +37,7 @@ Under suitable conditions, (2) admits an unique solution $P_{\epsilon}^\ast$. Le
 
 ## Sinkhorn Algorithm
 
-In the following, we denote $1_m \in R^m$ and $1_n \in R^n$ and $1_{m \times n} \in R^{m \times n}$ are vectors and matrix of only one elements. The optimal condition for for the dual form $(2)$ can be compactly written in matrix format with dot product operator $<\cdot , \cdot>$ and Larange multiplier vectors $\lambda_1 \in R^{m}$ and $\lambda_2 \in R^{n}$,
+For discrete finite measures, the derivation for a solution of $(2)$ is surprisingly straightforward, involving only basic calculus. Let $1_m \in \mathbb{R}^m$, $1_n \in \mathbb{R}^n$, and $1_{m \times n} \in \mathbb{R}^{m \times n}$ denote vectors and a matrix of ones. The optimality conditions for the dual form (2) can be compactly expressed in matrix form using the dot product $\langle \cdot, \cdot \rangle$ and Lagrange multipliers $\lambda_1 \in \mathbb{R}^m$ and $\lambda_2 \in \mathbb{R}^n$,
 
 $$
 \begin{aligned}
@@ -49,9 +49,9 @@ $$
 \end{aligned}
 $$
 
-Here $exp(\cdot)$ and $\log(\cdot)$ means element-wise application to the matrix. Moreover, $\lambda_1 \cdot 1^T$ is a matrix of repeated rows and $1 \cdot \lambda_2^T$ matrix of repated collumns. Thus, we have $\lambda_1 1_n^T = \text{diag}(\lambda_1) \cdot 1_{n \times n}$ and $1_m \lambda_2^T =  1_{m \times m} \cdot \text{diag}(\lambda_2)$ where diag$(\cdot)$ operator creates a diagional matrix with the vector argument. 
+Here, $\exp(\cdot)$ and $\log(\cdot)$ are applied element-wise to matrices. The term $\lambda_1 \cdot 1^T$ produces a matrix with repeated rows of $\lambda_1$, $1 \cdot \lambda_2^T$ repeated columns of $\lambda_2$. As such, this gives $\lambda_1 1_n^T = \text{diag}(\lambda_1) \cdot 1_{n \times n}$ and $1_m \lambda_2^T = 1_{m \times m} \cdot \text{diag}(\lambda_2)$, where $\text{diag}(\cdot)$ creates a diagonal matrix from a vector.
 
-As such, define vectors $u:= \exp \left( \frac{\lambda_{1, i}}{\epsilon} \right)$ and $v = \exp \left( \frac{\lambda_{2, i}}{\epsilon} \right)_j$ and matrix $K =  \exp \left ( \frac{-C }{\epsilon}  \right )$. The optimality condition implies,
+Define vectors $u := \exp\left(\frac{\lambda_1}{\epsilon}\right)$ and $v := \exp\left(\frac{\lambda_2}{\epsilon}\right)$, and let $K := \exp\left(-\frac{C}{\epsilon}\right)$. The optimality conditions then imply:
 
 $$
 \begin{aligned}
@@ -79,7 +79,7 @@ v^{t+1} &= b / (K^T u^{t+1})
 \end{aligned}
 $$
 
-where the operator $/$ is element-wise division.
+where the operator $/$ denotes element-wise division. This procedure is formally known as the Sinkhorn algorithm (Cuturi, 2013).
 
 ## From Stochastic to Deterministic Matching
 
