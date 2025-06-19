@@ -85,8 +85,7 @@ where the operator $/$ denotes element-wise division. This procedure is formally
 
 # Python Implementation
 
-The iterative algorithm is easy to implement.
-
+Using the iterative equations, the Python implementation is straightforward,
 
 ```
 import numpy as np
