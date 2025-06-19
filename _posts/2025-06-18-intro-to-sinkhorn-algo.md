@@ -83,6 +83,50 @@ $$
 
 where the operator $/$ denotes element-wise division. This procedure is formally known as the Sinkhorn algorithm (Cuturi, 2013).
 
+# Python Implementation
+
+The iterative algorithm is easy to implement.
+
+
+```
+import numpy as np
+
+def sinkhorn_algorithm(a, b, C, eps, max_iter=1000, threshold=1e-9):
+    """
+    """
+    # Normalize cost matrix for numerical stability
+    C = C / C.max()
+    # Compute the Gibbs kernel
+    K = np.exp(-C / eps)
+
+    # reshape a, b into column vec format
+    a = a.reshape((C.shape[0], 1))
+    b = b.reshape((C.shape[1], 1))
+
+    # Initialize scaling factors
+    u = np.ones_like(a)
+    v = np.ones_like(b)
+
+    # Sinkhorn iterations
+    for _ in range(max_iter):
+        u_prev = u.copy()
+        v_prev = v.copy()
+
+        # Update v
+        v = b / (K.T @ u)
+        # Update u
+        u = a / (K @ v)
+
+        # Check for convergence
+        if np.linalg.norm(u - u_prev) < threshold and np.linalg.norm(v - v_prev) < threshold:
+            break
+
+    # Compute the optimal transport plan
+    P_star = np.diag(u.flatten()) @ K @ np.diag(v.flatten())
+
+    return P_star
+```
+
 ## From Stochastic to Deterministic Matching
 
 <p align="center">
