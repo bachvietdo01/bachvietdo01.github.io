@@ -32,7 +32,7 @@ dX_t = u_t(X_t)dt + \frac{\sigma_t^2}{2} \cdot \nabla_x \log p_t(X_t) dt + \sigm
 \end{align}
 $$
 
-Here, $X_t \sim p_t(\cdot)$ traces the marginal probability path, $u_t(X_t)$ is the deterministic vector field, $\sigma_t^2$ is the diffusion coefficient, and $W_t$ denotes Brownian motion. Personally, I find the SDE perspective more intuitive and rigorous. The solution $\\{ X_t \\}$ to the SDE $(1)$ is also known formally as the **underdamped Langevin diffusion process** (see [Cheng et al., 2018](https://arxiv.org/pdf/1707.03663))
+Here, $X_t \sim p_t(\cdot)$ traces the marginal probability path, $u_t(X_t)$ is the deterministic vector field, $\sigma_t^2$ is the diffusion coefficient, and $W_t$ denotes Brownian motion. Personally, I find the SDE perspective more intuitive and rigorous.
 
 <p align="center">
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a2_ode_traj.png?raw=true" alt="ode_traj" width="450"/>
