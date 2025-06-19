@@ -45,7 +45,7 @@ $$
 \iff &\cfrac{d L}{dP} \left(  < P, C> - <\lambda_1, P 1_m - a> - <\lambda_2, P^T 1_n - b> + \epsilon < P, \log P > \right)   = 0 \\
 \iff & C - \lambda_1 1_n^T - 1_m \lambda_2^T + \epsilon \log P + \epsilon 1_{m \times n} = 0 \\
 \iff & P = \exp \left( \cfrac{-C + \lambda_1 \cdot 1^T + 1 \cdot \lambda_2^T  \}{\epsilon} - 1 \right) \\
-\iff & P = \exp \left( \cfrac{\lambda_1}{\epsilon} - 1 \right) \cdot \exp \left( \cfrac{-C }{\epsilon}  \right) \cdot \exp \left( \cfrac{-\lambda_2^T }{\epsilon}  \right)
+\iff & P = \exp \left( \cfrac{\lambda_1 \cdot 1^T}{\epsilon} - 1 \right) \cdot \exp \left( \cfrac{-C }{\epsilon}  \right) \cdot \exp \left( \cfrac{1 \cdot \lambda_2^T }{\epsilon}  \right)
 \end{aligned}
 $$
 
