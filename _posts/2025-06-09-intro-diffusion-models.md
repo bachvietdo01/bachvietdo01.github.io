@@ -47,7 +47,7 @@ X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla_x \log p_t(X_t)
 \end{aligned}
 $$
 
-The last term, $\sqrt{h} \cdot N(\cdot \mid 0 \\; , \\; I)$, is the outcome of taking a small changes of Brownian Motion $dW_t$, also known as white noise—the formal derivative of Brownian motion.
+The last term, $\sqrt{h}N(\cdot \mid 0 \\;,\\; I)$, is the outcome of taking a small changes of Brownian Motion $dW_t$, also known as white noise—the formal derivative of Brownian motion.
 
 
 ## Construct Conditional and Marginal Probability Path
