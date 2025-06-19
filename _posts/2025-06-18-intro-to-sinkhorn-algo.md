@@ -16,8 +16,7 @@ Let $a = (a_i)$ for $i = 1, \ldots, m$ and $b = (b_j)$ for $j = 1, 2, \ldots, m$
 $$
 \begin{aligned}
 \min_{P} \sum_{i,j} P_{i,j} C_{i,j} \\
-\text{st.} \\
-\sum_i {P}_{i,j} = a, \sum_j {P}(i,j) = b
+\text{st. } \sum_i {P}_{i,j} = a, \sum_j {P}(i,j) = b
 \end{aligned}
 $$
 
