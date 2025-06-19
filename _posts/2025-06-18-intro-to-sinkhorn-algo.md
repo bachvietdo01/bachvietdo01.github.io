@@ -17,21 +17,21 @@ Let matrix $C(i,j) \in R^{m \times n}$ be the cost of moving an "atom" from bin 
 
 $$
 \begin{aligned}
-&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} \\
+&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} (1) \\
 &\text{st. } \sum_i P_{i,j} = a, \sum_j P_{i,j} = b
 \end{aligned}
 $$
 
-This is a linear programming problem, and the typical solvers such has network simplex or interior point have cubic time complexity $O(n^3)$. These approaches become computationally expensive when the discrete distributions have many support bins. Cuturi (2013) proposed a computionally efficient algorithm by introducing an entropic regularization term to the optimization,
+It can be shown $(1)$ admits a unique solution. Moreover, this is a linear programming problem, and the typical solvers such has network simplex or interior point have cubic time complexity $O(n^3)$. These approaches become computationally expensive when the discrete distributions have many support bins. Cuturi (2013) proposed a computionally efficient algorithm by introducing an entropic regularization term to the optimization,
 
 $$
 \begin{aligned}
-&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} - \epsilon H(P) \\
+&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} - \epsilon H(P) (2) \\
 &\text{st. } \sum_i P_{i,j} = a, \sum_j P_{i,j} = b
 \end{aligned}
 $$
 
-where $H(P) = - \sum_{i,j} P_{i,j} \log P_{i,j} \propto -\text{KL}(P, a \otimes b)$. where KL is the Kullback–Leibler divergence and $a \otimes b$ the joint distribution of $a$ and $b$ under which the marginal $a$ and $b$ are independent.
+where the entropy as $H(P) = - \sum_{i,j} P_{i,j} \log P_{i,j} \propto -\text{KL}(P, a \otimes b)$, KL denotes the Kullback–Leibler divergence and $a \otimes b$ is the product (independent) distribution with marginals $a$ and $b$. Intuitively, $P_{i,j}$ represents possible joint distributions matching marginals $a$ and $b$, and the entropic regularization in $(2)$ penalizes large deviations from the independent joint. Under suitable conditions, $(2)$ admits a unique solution $P_\epsilon^$. Let $P^$ denote the unique solution to the original Kantorovich problem $(1)$. Remarkably, $P_\epsilon^* \to P^*$ as $\epsilon \to 0$ ([see Nutz, 2022](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.math.columbia.edu/~mnutz/docs/EOT_lecture_notes.pdf)).
 
 ## From Stochastic to Deterministic Matching
 
@@ -41,7 +41,7 @@ where $H(P) = - \sum_{i,j} P_{i,j} \log P_{i,j} \propto -\text{KL}(P, a \otimes 
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps005.png?raw=true" alt="eps005" width="185"/>
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps000.png?raw=true" alt="eps000" width="200"/>
 <br>
-<em>Optimal Matching solutions with different epsilons. Image Credit: G. Peyre’s twitter account</em>
+<em>Optimal solutions for different epsilons. Image Credit: G. Peyre’s twitter account</em>
 </p>
 
 
