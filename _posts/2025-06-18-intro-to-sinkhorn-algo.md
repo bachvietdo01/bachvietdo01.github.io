@@ -49,7 +49,7 @@ $$
 \end{aligned}
 $$
 
-
+Here $exp(\cdot)$ and $\log(\cdot)$ means element-wise application to the matrix. Moreover, $\lambda_1 \cdot 1^T$ is a matrix of repeated rows and $1 \cdot \lambda_2^T$ matrix of repated collumns. Thus, we have $\lambda_1 1_n^T = \text{diag}(\lambda_1) \cdot 1_{n \times n}$ and $1_m \lambda_2^T =  1_{m \times m}  \text{diag}(\lambda_2)$.
 
 ## From Stochastic to Deterministic Matching
 
