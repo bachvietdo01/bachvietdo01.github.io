@@ -17,7 +17,7 @@ Let matrix $C(i,j) \in R^{m \times n}$ be the cost of moving an "atom" from bin 
 
 $$
 \begin{aligned}
-&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} (1) \\
+&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} \quad (1) \\
 &\text{st. } \sum_i P_{i,j} = a, \sum_j P_{i,j} = b
 \end{aligned}
 $$
@@ -26,7 +26,7 @@ It can be shown $(1)$ admits a unique solution. Moreover, this is a linear progr
 
 $$
 \begin{aligned}
-&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} - \epsilon H(P) (2) \\
+&\min_{P} \sum_{i,j} P_{i,j} \cdot C_{i,j} - \epsilon H(P) \quad (2) \\
 &\text{st. } \sum_i P_{i,j} = a, \sum_j P_{i,j} = b
 \end{aligned}
 $$
