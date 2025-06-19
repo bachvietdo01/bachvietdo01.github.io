@@ -22,7 +22,7 @@ $$
 \end{aligned}
 $$
 
-Note that this is a Linear Progamming problem of which the common solver like network simplex or interior point has cubic time complexity $O(n^3)$. This can be computationally expensive if the discrete distributions are supported on a large number of "bins".
+Note that this is a Linear Progamming problem of which the common solvers like network simplex or interior point has cubic time complexity $O(n^3)$. This can be computationally expensive if the discrete distributions are supported on a large number of "bins". Cuturi, 2013 presented an intriguing idea for a more efficent algorithm. The author formulated the optimization with an entropic regularization term.
 
 
 ## From Stochastic to Deterministic Matching
