@@ -61,7 +61,7 @@ $$
 \end{aligned}
 $$
 
-Eqivalently,
+Equivalently,
 
 $$
 \begin{aligned}
@@ -74,7 +74,8 @@ As $K$, the function of cost, is a constant, we can construct an iterative algor
 
 $$
 \begin{aligned}
-u^t 
+u^{t+1} &= a \odiv Kv^{t} \\
+v^{t+1} &= b \odiv (K^T u^{t+1})  
 \end{aligned}
 $$
 
