@@ -89,7 +89,7 @@ where the operator $/$ denotes element-wise division. This procedure is formally
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps005.png?raw=true" alt="eps005" width="185"/>
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps000.png?raw=true" alt="eps000" width="200"/>
 <br>
-<em>Optimal solutions of moving from blue to red distributions for different epsilons. Image Credit: G. Peyre’s twitter account</em>
+<em>Optimal solutions of moving mass from blue to red distributions for different epsilons. Image Credit: G. Peyre’s twitter account</em>
 </p>
 
 
