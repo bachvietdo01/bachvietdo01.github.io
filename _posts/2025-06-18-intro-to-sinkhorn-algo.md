@@ -51,7 +51,7 @@ Since minimizing the regularization term corresponds to maximizing the entropy o
 
 ## Sinkhorn Algorithm
 
-For discrete finite measures, the derivation is surprisingly straightforward, involving only basic calculus. Let $1_m \in R^m, 1_n \in R^n$ are vectors of only one elements.
+For discrete finite measures, given a fixed hyperparameter $\epsilon$, the derivation of a solution for $(2)$ is surprisingly straightforward, involving only basic calculus. Let $1_m \in R^m, 1_n \in R^n$ are vectors of only one elements.
 
 Moreover, $1_{m \times n} \in \mathbb{R}^{m \times n}$ is a matrix of ones.  The optimality conditions for the dual form of (2) can be compactly expressed in matrix form using the dot product $\langle \cdot , \cdot \rangle$ and Lagrange multiplier vectors $\lambda_1 \in \mathbb{R}^m$ and $\lambda_2 \in \mathbb{R}^n$.
 
