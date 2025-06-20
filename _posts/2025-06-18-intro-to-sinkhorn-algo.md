@@ -35,6 +35,20 @@ where the entropy as $H(P) = -\sum_{i,j} P_{i,j} \log P_{i,j} \propto -\text{KL}
 
 Under suitable conditions, (2) admits an unique solution $P_{\epsilon}^\ast$. Let $P^\ast$ denote the unique solution to the original Kantorovich problem (1). Remarkably, $P_\epsilon^* \to P^*$ as $\epsilon \to 0$ ([see Nutz, 2022](https://www.math.columbia.edu/~mnutz/docs/EOT_lecture_notes.pdf)).
 
+
+## From Stochastic to Deterministic Matching
+
+Since minimizing the regularization term corresponds to maximizing the entropy of $P$, the optimal transport plan becomes more stochastic as $\epsilon$ increases, as shown in the figure below. This behavior reflects a beautiful connection between Entropic Optimal Transport and the Schrödinger Bridge problem—a link that has inspired more efficient diffusion models. I’ll discuss this topic in a future post with the paper [De Bortoli et al., 2021](https://arxiv.org/abs/2106.01357).
+
+<p align="center">
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps100.png?raw=true" alt="eps100" width="190"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps020.png?raw=true" alt="eps020" width="200"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps005.png?raw=true" alt="eps005" width="185"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps000.png?raw=true" alt="eps000" width="200"/>
+<br>
+<em>Optimal solutions of moving mass from blue to red distributions for different epsilons. Image Credit: G. Peyre’s twitter account</em>
+</p>
+
 ## Sinkhorn Algorithm
 
 For discrete finite measures, the derivation is surprisingly straightforward, involving only basic calculus. Let $1_m \in R^m, 1_n \in R^n$ are vectors of only one elements.
@@ -128,16 +142,7 @@ def sinkhorn_algorithm(a, b, C, eps, max_iter=1000, threshold=1e-9):
     return P_star
 ```
 
-## From Stochastic to Deterministic Matching
 
-<p align="center">
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps100.png?raw=true" alt="eps100" width="190"/>
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps020.png?raw=true" alt="eps020" width="200"/>
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps005.png?raw=true" alt="eps005" width="185"/>
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps000.png?raw=true" alt="eps000" width="200"/>
-<br>
-<em>Optimal solutions of moving mass from blue to red distributions for different epsilons. Image Credit: G. Peyre’s twitter account</em>
-</p>
 
 
 ## Reference
