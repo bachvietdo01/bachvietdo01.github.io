@@ -101,12 +101,9 @@ $$
 
 where the operator $/$ denotes element-wise division. This procedure is formally known as the Sinkhorn algorithm (Cuturi, 2013). 
 
-Intuitively, let $\mathbb{M}_a$ and $\mathbb{M}_b$ be the manifolds of couplings with marginals $a$ and $b$, respectively. The Sinkhorn algorithm alternately projects the cost transformed matrix $K$ onto $\mathbb{M}_a$ and $\mathbb{M}_b$ until it converges to their intersection.
-
-
 # Python Implementation
 
-Using the iterative equations, the Python implementation is straightforward,
+Intuitively, let $\mathbb{M}_a$ and $\mathbb{M}_b$ be the manifolds of couplings with marginals $a$ and $b$, respectively. The Sinkhorn algorithm alternately projects the cost transformed matrix $K$ onto $\mathbb{M}_a$ and $\mathbb{M}_b$ until it converges to their intersection. Using the iterative equations, the Python implementation is straightforward,
 
 ```
 import numpy as np
