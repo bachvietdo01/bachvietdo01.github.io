@@ -38,7 +38,7 @@ Under suitable conditions, (2) admits an unique solution $P_{\epsilon}^\ast$. Le
 
 ## From Stochastic to Deterministic Matching
 
-Since minimizing the regularization term corresponds to maximizing the entropy of $P$, the optimal transport plan becomes more stochastic as $\epsilon$ increases, as shown in the figure below. This behavior reflects a beautiful connection between Entropic Optimal Transport and the Schrödinger Bridge problem—a link that has inspired more efficient diffusion models. I’ll discuss this topic in a future post with the paper [De Bortoli et al., 2021](https://arxiv.org/abs/2106.01357).
+Since minimizing the regularization term corresponds to maximizing the entropy of $P$, the optimal transport plan becomes more stochastic as $\epsilon$ increases, as shown in the figure below. In fact, this behavior reflects a beautiful connection between Entropic Optimal Transport and the Schrödinger Bridge problem—a link that has inspired its application to construct more "efficient" diffusion models. I’ll discuss the topic in a future post with the paper [De Bortoli et al., 2021](https://arxiv.org/abs/2106.01357).
 
 <p align="center">
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a3_sinkhorn_eps100.png?raw=true" alt="eps100" width="190"/>
