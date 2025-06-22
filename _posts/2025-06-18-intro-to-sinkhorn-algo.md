@@ -76,9 +76,12 @@ $$
 
 Refer to [Petersen, 2012](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) for common rules of matrix derivatives. Here, $\exp(\cdot)$ and $\log(\cdot)$ are applied element-wise to matrices. The term $\lambda_1 \cdot 1^T$ produces a matrix with repeated rows of $\lambda_1$, $1 \cdot \lambda_2^T$ repeated columns of $\lambda_2$. As such, this gives 
 
-$\lambda_{1} \cdot 1{n}^{T} = diag(\lambda_1) \cdot 1_{n \times n}$  
-
-$1{m} \cdot \lambda_{2}^{T} = 1_{m \times m} \cdot diag(\lambda_2)$.
+$$
+\begin{aligned}
+\lambda_{1} \cdot 1{n}^{T} = diag(\lambda_1) \cdot 1_{n \times n} \\
+1{m} \cdot \lambda_{2}^{T} = 1_{m \times m} \cdot diag(\lambda_2)
+\end{aligned}
+$$
 
 where $\text{diag}(\cdot)$ creates a diagonal matrix from a vector, and $\mathbf{1}_{p \times q}$ denotes a $p \times q$ matrix of ones. Define vectors $u := \exp\left(\frac{\lambda_1}{\epsilon}\right)$ and $v := \exp\left(\frac{\lambda_2}{\epsilon}\right)$, and let $K := \exp\left(-\frac{C}{\epsilon}\right)$. The optimality conditions then imply:
 
