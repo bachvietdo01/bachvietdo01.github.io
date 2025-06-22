@@ -51,7 +51,7 @@ $$
 
 The last term, $\sqrt{h}N(\cdot \mid 0 \\;,\\; I)$, is the outcome of taking small changes of Brownian Motion $dW_t$, also known as white noise—the formal derivative of Brownian motion.
 
-Similar to Flow Matching, if we are given a learned vector field and score function, we can partition $[0,1]$ into intervals $0 < h < 2h < 3h < \ldots < 1$ and simulate $X_t$ using the above equation. The final value $X_1$ is the sample from $p_\text{data}$.
+Similar to Flow Matching, if we are given a learned vector field and score function, we can partition $[0,1]$ into intervals $0 < h < 2h < 3h < \ldots < 1$ and simulate the trajectory $X_t$ using the above equation. The final value $X_1$ is the sample from $p_\text{data}$.
 
 
 ## Construct Conditional and Marginal Probability Path
