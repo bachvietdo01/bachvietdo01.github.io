@@ -31,7 +31,7 @@ where $u_t(x): \mathbb{R}^d \times [0,1] \to \mathbb{R}^d$ is the vector field a
 
 The vector field depends on time $t$ and the trajectory location at time t $X_t$. We want to "construct" a vector field that transports samples ("via flows") from the initial distribution $p_0$, typically a standard Gaussian $N(0, I)$, to $p_{\text{data}}$. The main goal of Flow Matching is to learn or estimate this vector field $u_t(x)$ using a **Neural Network**.
 
-## How to sample from a learned vector field ?
+## How to sample $p_{\text{data}}$ from a learned vector field ?
 
 Let's say we are able to learn such a vector field $\hat{u_t}(X_t)$ that takes us from the initial distribution $p_0$ to the target distribution $p_\text{data}$. For a small $h$, the ODE $(1)$ imples that,
 
