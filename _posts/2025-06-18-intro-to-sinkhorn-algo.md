@@ -83,7 +83,7 @@ $$
 \end{aligned}
 $$
 
-where $\text{diag}(\cdot)$ creates a diagonal matrix from a vector, and $\mathbf{1}_{p \times q}$ denotes a $p \times q$ matrix of ones. Define vectors $u := \exp\left(\frac{\lambda_1}{\epsilon}\right)$ and $v := \exp\left(\frac{\lambda_2}{\epsilon}\right)$, and let $K := \exp\left(-\frac{C}{\epsilon}\right)$. The optimality conditions then imply:
+where $\text{diag}(\cdot)$ creates a diagonal matrix from a vector, and $\mathbf{1}_{p \times q}$ denotes a $p \times q$ matrix of ones. Define vectors $u := \exp\left(\frac{\lambda_1}{\epsilon} - 1\right)$ and $v := \exp\left(\frac{\lambda_2}{\epsilon}\right)$, and let $K := \exp\left(-\frac{C}{\epsilon}\right)$. The optimality conditions then imply:
 
 $$
 \begin{aligned}
