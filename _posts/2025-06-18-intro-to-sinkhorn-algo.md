@@ -115,7 +115,7 @@ where the operator $/$ denotes element-wise division. This procedure is formally
 
 # Python Implementation
 
-Intuitively, let $\mathbb{M}_a$ and $\mathbb{M}_b$ be the manifolds of couplings with marginals $a$ and $b$, respectively. The Sinkhorn algorithm alternately projects the cost transformed matrix $K$ onto $\mathbb{M}_a$ and $\mathbb{M}_b$. In other words, the projected matrix gets "ping-ponged" between two manifolds until its convergence to an optimal value.
+Intuitively, let $\mathbb{M}_a$ and $\mathbb{M}_b$ be the manifolds of couplings with marginals $a$ and $b$, respectively. The Sinkhorn algorithm alternately projects the cost transformed matrix $K$ onto $\mathbb{M}_a$ and $\mathbb{M}_b$. In other words, the projected matrix gets "ping-ponged" between these two manifolds until its convergence to an optimal value.
 
 Using the iterative equations, the Python implementation is straightforward:
 
@@ -156,7 +156,9 @@ def sinkhorn_algorithm(a, b, C, eps, max_iter=1000, threshold=1e-9):
     return P_star
 ```
 
+## Final Remark: Connection to Mirror Descent 
 
+[Mirror Descent](https://en.wikipedia.org/wiki/Mirror_descent) is a class of gradient descent algorithm that adapts the gradient step to the geometry of the optimization problem. The Sinkhorn alogrithm can also be intepreted as a Mirror Descent optimization algorithm in the space of probability mesures (see Aubin-Frankowski et al., 2022 and Reza et al., 2024).
 
 
 ## Reference
@@ -164,6 +166,11 @@ def sinkhorn_algorithm(a, b, C, eps, max_iter=1000, threshold=1e-9):
 [1] Cuturi, Marco. "Sinkhorn distances: Lightspeed computation of optimal transport." Advances in neural information processing systems 26 (2013)
 
 [2] Nutz, Marcel, and Johannes Wiesel. "Entropic optimal transport: Convergence of potentials." Probability Theory and Related Fields 184.1 (2022): 401-424.
+
+[3] Karimi, Mohammad Reza, Ya-Ping Hsieh, and Andreas Krause. "Sinkhorn flow as mirror flow: A continuous-time framework for generalizing the sinkhorn algorithm." International Conference on Artificial Intelligence and Statistics. PMLR, 2024.
+
+[4] Aubin-Frankowski, Pierre-Cyril, Anna Korba, and Flavien Léger. "Mirror descent with relative smoothness in measure spaces, with application to sinkhorn and em." Advances in Neural Information Processing Systems 35 (2022): 17263-17275.
+
 
 
 
