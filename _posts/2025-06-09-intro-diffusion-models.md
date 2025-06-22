@@ -32,12 +32,14 @@ dX_t = u_t(X_t)dt + \frac{\sigma_t^2}{2} \cdot \nabla_x \log p_t(X_t) dt + \sigm
 \end{align}
 $$
 
-Here, $X_t \sim p_t(\cdot)$ traces the marginal probability path, $u_t(X_t)$ is the deterministic vector field, $\sigma_t^2$ is the diffusion coefficient, and $W_t$ denotes Brownian motion. Personally, I find the SDE perspective more intuitive and rigorous.
+Here, $X_t \sim p_t(\cdot)$ traces the marginal probability path, $u_t(X_t)$ is the deterministic vector field, $\nabla_x \log p_t(X_t)$ the score function, $\sigma_t^2$ the diffusion coefficient, and $W_t$ denotes Brownian motion. Personally, I find the SDE perspective more intuitive and rigorous.
 
 <p align="center">
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a2_ode_traj.png?raw=true" alt="ode_traj" width="450"/>
 <img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a2_sde_traj.png?raw=true" alt="sde_traj" width="450"/> 
 </p>
+
+## How to sample $p_{\text{data}}$ from a learned SDE ?
 
 The SDE $(1)$ implies that for sufficiently small $h > 0$, 
 
@@ -48,6 +50,8 @@ X_{t+h} = X_t + h\cdot u_t + h \cdot \frac{\sigma_t^2}{2} \nabla_x \log p_t(X_t)
 $$
 
 The last term, $\sqrt{h}N(\cdot \mid 0 \\;,\\; I)$, is the outcome of taking small changes of Brownian Motion $dW_t$, also known as white noise—the formal derivative of Brownian motion.
+
+Similar to Flow Matching, if we are given a learned vector field and score function, we can partition $[0,1]$ into intervals $0 < h < 2h < 3h < \ldots < 1$ and simulate $X_t$ using the above equation. The final value $X_1$ is the sample from $p_\text{data}$.
 
 
 ## Construct Conditional and Marginal Probability Path
