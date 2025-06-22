@@ -67,8 +67,8 @@ Moreover, $1_{m \times n} \in \mathbb{R}^{m \times n}$ is a matrix of ones.  The
 $$
 \begin{aligned}
 &\frac{d L(P, \lambda_1, \lambda_2)}{dP} = 0 \\
-\iff\ &\frac{dL}{dP} \left( \langle P, C \rangle - \langle \lambda_1, P 1_m - a \rangle - \langle \lambda_2, P^T 1_n - b \rangle + \epsilon \langle P, \log P \rangle \right) = 0 \\
-\iff\ & C - \lambda_1 1_m^T - 1_n \lambda_2^T + \epsilon \log P + \epsilon 1_{m \times n} = 0 \\
+\iff\ &\frac{dL}{dP} \left( \langle P, C \rangle - \langle \lambda_1, P 1_n - a \rangle - \langle \lambda_2, P^T 1_m - b \rangle + \epsilon \langle P, \log P \rangle \right) = 0 \\
+\iff\ & C - \lambda_1 1_n^T - 1_m \lambda_2^T + \epsilon \log P + \epsilon 1_{m \times n} = 0 \\
 \iff\ & P = \exp \left( \frac{-C + \lambda_1 \cdot 1^T + 1 \cdot \lambda_2^T}{\epsilon} - 1 \right) \\
 \iff\ & P = \exp \left( \frac{\lambda_1 \cdot 1^T}{\epsilon} - 1 \right) \cdot \exp \left( \frac{-C}{\epsilon} \right) \cdot \exp \left( \frac{1 \cdot \lambda_2^T}{\epsilon} \right)
 \end{aligned}
@@ -78,8 +78,8 @@ Refer to [Petersen, 2012](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook
 
 $$
 \begin{aligned}
-\lambda_{1} \cdot 1{n}^{T} = diag(\lambda_1) \cdot 1_{n \times n} \\
-1{m} \cdot \lambda_{2}^{T} = 1_{m \times m} \cdot diag(\lambda_2)
+\lambda_{1} \cdot 1{m}^{T} = diag(\lambda_1) \cdot 1_{n \times n} \\
+1{n} \cdot \lambda_{2}^{T} = 1_{m \times m} \cdot diag(\lambda_2)
 \end{aligned}
 $$
 
