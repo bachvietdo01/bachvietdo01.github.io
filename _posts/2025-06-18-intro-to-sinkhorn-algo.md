@@ -26,7 +26,7 @@ Let's say the histogram bins (red for $a$, blue for $b$) are scattered in a 2D s
 
 $$
 \begin{aligned}
-&\min_{P} E \lvert X - Y \rvert^2_2 \\
+&\min_{P} E \lVert X - Y \rVert^2_2 \\
 &\text{st. } \sum_i P_{i,j} = a, \sum_j P_{i,j} = b, X \sim a, Y \sim b
 \end{aligned}
 $$
