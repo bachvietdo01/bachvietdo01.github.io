@@ -35,7 +35,9 @@ The vector field depends on time $t$ and the trajectory location at time t $X_t$
 
 Let's say we are able to learn such a vector field $\hat{u_t}(X_t)$ that takes us from the initial distribution $p_0$ to the target distribution $p_\text{data}$. For a small $h$, the ODE $(1)$ imples that,
 
-$$X_{t+h} = X_t + h \cdot u_t$$. 
+$$\begin{align} 
+X_{t+h} = X_t + h \cdot u_t.
+\end{align}$$  
 
 We can partition $[0,1]$ into intervals $0 < h < 2h < 3h < \ldots < 1$ and simulate $X_t$ using the above equation. The final value $X_1$ is a data point sample from $p_\text{data}$.
 
