@@ -22,7 +22,7 @@ $$
 \end{aligned}
 $$
 
-Let's say the histogram bins (red for $a$, blue for $b$) are scattered in a 2D space as shown in the below figure. The solution to $(1)$ is the optimal transport plan to move mass from bins of $a$ to bins of $b$ at minimal cost. If $C_{i,j}$ is the Euclidean distance between 2D location of $a$'s bin i and $b$'s bin j then $(1)$ is also equivalent to
+Let's say the histogram bins (red for $a$, blue for $b$) are scattered in a 2D space as shown in the below figure. The solution to $(1)$ is the optimal transport plan to move mass from the bins of $a$ to the bins of $b$ at minimal cost. If $C_{i,j}$ is the Euclidean distance between 2D location of $a$'s bin i and $b$'s bin j then $(1)$ is also equivalent to
 
 $$
 \begin{aligned}
