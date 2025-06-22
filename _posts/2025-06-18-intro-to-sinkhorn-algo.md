@@ -158,7 +158,7 @@ def sinkhorn_algorithm(a, b, C, eps, max_iter=1000, threshold=1e-9):
 
 ## Final Remark: Connection to Mirror Descent 
 
-[Mirror Descent](https://en.wikipedia.org/wiki/Mirror_descent) is a class of gradient descent algorithm that adapts the gradient step to the geometry of the optimization problem. The Sinkhorn alogrithm can also be intepreted as a Mirror Descent optimization algorithm in the space of probability mesures (see Aubin-Frankowski et al., 2022 and Reza et al., 2024).
+[Mirror Descent](https://en.wikipedia.org/wiki/Mirror_descent) is a class of gradient descent optmization that adjusts its gradient steps based on the geometry of the optimization problem. The Sinkhorn algorithm can also be interpreted as a Mirror Descent method in the space of probability measures (see Aubin-Frankowski et al., 2022, and Reza et al., 2024).
 
 
 ## Reference
