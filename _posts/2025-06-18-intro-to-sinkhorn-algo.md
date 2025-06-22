@@ -22,6 +22,15 @@ $$
 \end{aligned}
 $$
 
+Let's say the histogram bins (red for $a$, blue for $b$) are scattered in 2D space as shown in the below figure. The solution to $(1)$ is the optimal transport plan to move mass from $a$ to $b$ at minimal cost. If $C_{i,j}$ is the Euclidean distance between 2D location of $a$'s bin i and $b$'s bin j then $(1)$ is also equivalent to
+
+$$
+\begin{aligned}
+&\min_{P} E \lvert X - Y \rvert^2_2 \\
+&\text{st. } \sum_i P_{i,j} = a, \sum_j P_{i,j} = b, X \sim a, y \sim b
+\end{aligned}
+$$
+
 It can be shown $(1)$ admits a unique solution. Moreover, this is a linear programming problem, and the typical solvers such has network simplex or interior point have cubic time complexity $O(n^3)$. These approaches become computationally expensive when the discrete distributions have many support bins. Cuturi (2013) proposed a computionally efficient algorithm by introducing an entropic regularization term to the optimization,
 
 $$
@@ -67,9 +76,9 @@ $$
 
 Refer to [Petersen, 2012](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) for common rules of matrix derivatives. Here, $\exp(\cdot)$ and $\log(\cdot)$ are applied element-wise to matrices. The term $\lambda_1 \cdot 1^T$ produces a matrix with repeated rows of $\lambda_1$, $1 \cdot \lambda_2^T$ repeated columns of $\lambda_2$. As such, this gives 
 
-$\lambda_{1} 1{n}^{T} = diag(\lambda_1) \cdot 1_{n \times n}$  
+$\lambda_{1} \cdot 1_{n}^{T} = diag(\lambda_1) \cdot 1_{n \times n}$  
 
-$1{m} \lambda{2}^{T} = 1_{m \times m} \cdot diag(\lambda_2)$.
+$1_{m} \cdot \lambda_{2}^{T} = 1_{m \times m} \cdot diag(\lambda_2)$.
 
 where $\text{diag}(\cdot)$ creates a diagonal matrix from a vector, and $\mathbf{1}_{p \times q}$ denotes a $p \times q$ matrix of ones. Define vectors $u := \exp\left(\frac{\lambda_1}{\epsilon}\right)$ and $v := \exp\left(\frac{\lambda_2}{\epsilon}\right)$, and let $K := \exp\left(-\frac{C}{\epsilon}\right)$. The optimality conditions then imply:
 
