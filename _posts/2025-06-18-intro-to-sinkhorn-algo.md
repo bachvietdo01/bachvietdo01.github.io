@@ -78,8 +78,8 @@ Refer to [Petersen, 2012](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook
 
 $$
 \begin{aligned}
-\lambda_{1} \cdot 1{m}^{T} = diag(\lambda_1) \cdot 1_{n \times n} \\
-1{n} \cdot \lambda_{2}^{T} = 1_{m \times m} \cdot diag(\lambda_2)
+\lambda_{1} \cdot 1{n}^{T} = diag(\lambda_1) \cdot 1_{n \times n} \\
+1{m} \cdot \lambda_{2}^{T} = 1_{m \times m} \cdot diag(\lambda_2)
 \end{aligned}
 $$
 
