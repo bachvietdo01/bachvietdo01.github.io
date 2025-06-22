@@ -102,7 +102,7 @@ $$
 \end{aligned}
 $$
 
-where $\otimes$ is the element-wise multiplication operator (Hadamard product). As $K$, the function of cost, is a constant, we can construct an iterative algorithm as follows,
+where $\odot$ is the element-wise multiplication operator (Hadamard product). As $K$, the function of cost, is a constant, we can construct an iterative algorithm as follows,
 
 $$
 \begin{aligned}
