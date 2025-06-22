@@ -65,11 +65,7 @@ $$
 \end{aligned}
 $$
 
-Refer to [Petersen, 2012](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) for common rules of matrix derivatives. Here, $\exp(\cdot)$ and $\log(\cdot)$ are applied element-wise to matrices. The term $\lambda_1 \cdot 1^T$ produces a matrix with repeated rows of $\lambda_1$, $1 \cdot \lambda_2^T$ repeated columns of $\lambda_2$. As such, this gives  
-
-$\lambda_{1} 1{n}^{T} = diag(\lambda{1}) \cdot 1_{n \times n}$
-  
-$1_{m} \lambda_{2}^{T}$
+Refer to [Petersen, 2012](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) for common rules of matrix derivatives. Here, $\exp(\cdot)$ and $\log(\cdot)$ are applied element-wise to matrices. The term $\lambda_1 \cdot 1^T$ produces a matrix with repeated rows of $\lambda_1$, $1 \cdot \lambda_2^T$ repeated columns of $\lambda_2$. As such, this gives $\lambda_{1} 1{n}^{T} = diag(\lambda{1}) \cdot 1_{n \times n}$ and $1{m} \lambda{2}^{T} = 1_{m \times m} \cdot diag(\lambda{2})$.
 
 where $\text{diag}(\cdot)$ creates a diagonal matrix from a vector, and $\mathbf{1}_{p \times q}$ denotes a $p \times q$ matrix of ones. Define vectors $u := \exp\left(\frac{\lambda_1}{\epsilon}\right)$ and $v := \exp\left(\frac{\lambda_2}{\epsilon}\right)$, and let $K := \exp\left(-\frac{C}{\epsilon}\right)$. The optimality conditions then imply:
 
@@ -99,7 +95,7 @@ v^{t+1} &= b / (K^T u^{t+1})
 \end{aligned}
 $$
 
-where the operator $/$ denotes element-wise division. This procedure is formally known as the Sinkhorn algorithm (Cuturi, 2013). Under suitable conditions, it can be shown that the Sinkhorn algorithm converges ([see Section 6 Nutz, 2022](https://www.math.columbia.edu/~mnutz/docs/EOT_lecture_notes.pdf)).
+where the operator $/$ denotes element-wise division. This procedure is formally known as the Sinkhorn algorithm (Cuturi, 2013). Under suitable conditions, it can be shown that the Sinkhorn algorithm converges to the optimal solution ([see Section 6 Nutz, 2022](https://www.math.columbia.edu/~mnutz/docs/EOT_lecture_notes.pdf)).
 
 # Python Implementation
 
@@ -148,6 +144,8 @@ def sinkhorn_algorithm(a, b, C, eps, max_iter=1000, threshold=1e-9):
 ## Reference
 
 [1] Cuturi, Marco. "Sinkhorn distances: Lightspeed computation of optimal transport." Advances in neural information processing systems 26 (2013)
+
+[2] Nutz, Marcel, and Johannes Wiesel. "Entropic optimal transport: Convergence of potentials." Probability Theory and Related Fields 184.1 (2022): 401-424.
 
 
 
