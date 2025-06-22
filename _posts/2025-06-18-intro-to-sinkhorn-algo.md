@@ -111,7 +111,7 @@ v^{t+1} &= b / (K^T u^{t+1})
 \end{aligned}
 $$
 
-where the operator $/$ denotes element-wise division. This procedure is formally known as the Sinkhorn algorithm (Cuturi, 2013). Under suitable conditions, it can be shown that the Sinkhorn algorithm converges to the optimal solution ([see Section 6 Nutz, 2022](https://www.math.columbia.edu/~mnutz/docs/EOT_lecture_notes.pdf)).
+where the operator $/$ denotes element-wise division. This procedure is formally known as the Sinkhorn algorithm (Cuturi, 2013). Under suitable conditions, it can be shown that the Sinkhorn algorithm converges to these optimal solution ([see Section 6 Nutz, 2022](https://www.math.columbia.edu/~mnutz/docs/EOT_lecture_notes.pdf)).
 
 # Python Implementation
 
