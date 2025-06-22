@@ -67,7 +67,7 @@ $$
 
 Refer to [Petersen, 2012](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) for common rules of matrix derivatives. Here, $\exp(\cdot)$ and $\log(\cdot)$ are applied element-wise to matrices. The term $\lambda_1 \cdot 1^T$ produces a matrix with repeated rows of $\lambda_1$, $1 \cdot \lambda_2^T$ repeated columns of $\lambda_2$. As such, this gives  
 
-$\lambda_{1} 1_{n}^{T}$
+$\lambda_{1} 1{n}^{T} = diag(\lambda{1}) \cdot 1_{n \times n}$
   
 $1_{m} \lambda_{2}^{T}$
 
@@ -99,7 +99,7 @@ v^{t+1} &= b / (K^T u^{t+1})
 \end{aligned}
 $$
 
-where the operator $/$ denotes element-wise division. This procedure is formally known as the Sinkhorn algorithm (Cuturi, 2013). 
+where the operator $/$ denotes element-wise division. This procedure is formally known as the Sinkhorn algorithm (Cuturi, 2013). Under suitable conditions, it can be shown that the Sinkhorn algorithm converges ([see Section 6 Nutz, 2022](https://www.math.columbia.edu/~mnutz/docs/EOT_lecture_notes.pdf)).
 
 # Python Implementation
 
