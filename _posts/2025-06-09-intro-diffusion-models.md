@@ -301,7 +301,7 @@ class GaussianConditionalProbabilityPath(nn.Module):
         return (z * alpha_t - x) / beta_t ** 2
 ```
 
-#### Step 3: Learn vector field $u_t(x)$ and score $\nabla_x \log p_t(x)$ with MLP(s)
+#### Step 3.1: Learn vector field $u_t(x)$ with an MLP Neural Net
 
 ```
 class MLPVectorField(torch.nn.Module):
@@ -357,6 +357,8 @@ flow_model = MLPVectorField(dim=2, hiddens=[1024,16])
 trainer = ConditionalFlowMatchingTrainer(path, flow_model)
 losses = trainer.train(num_epochs=5000, device=device, lr=1e-3, batch_size=1000)
 ```
+
+#### Step 3.2: Learn score function $\nabla_x \log p_t(x)$ with an MLP Neural Net
 
 ```
 class MLPScore(torch.nn.Module):
