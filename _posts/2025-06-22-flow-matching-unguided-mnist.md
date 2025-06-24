@@ -298,7 +298,7 @@ U-Net is a convolutional neural network composed of downsampling encoder blocks,
 
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/bachvietdo01/generative_models/refs/heads/main/unguided_mnist_fm/asset/unguide_fminst_sample.png" alt="sample" width="1000"/>
+<img src="https://raw.githubusercontent.com/bachvietdo01/generative_models/refs/heads/main/unguided_mnist_fm/asset/unguide_fminst_sample.png" alt="sample" width="800"/>
 <br>
 <em>U-Net Architecture. Image Credit: Unpaired Deep Cross-Modality Synthesis with Fast Trainin</em>
 </p>
