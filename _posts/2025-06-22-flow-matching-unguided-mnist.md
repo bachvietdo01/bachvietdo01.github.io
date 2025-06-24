@@ -1,4 +1,4 @@
----
+![image](https://github.com/user-attachments/assets/b9cdecee-ff9b-40cb-82ac-74aec3c68ef7)---
 layout: post
 title: "Flow Matching: (Unguided) Generative Models for MNIST images"
 author: "Bach Do"
@@ -268,7 +268,9 @@ else:
     torch.save(flow_model.state_dict(), "trained/mnist_unet_fm.pt")
 ```
 
-## Step 3: Generate Sample for the learned vector field by simulating ODE
+## Step 3: Generate sample for the learned vector field by simulating ODE
+
+We use the Euler method to simulate the ODE and note that it takes 1000 steps to generate a single sample.
 
 ```
 from ode import LearnedVectorFieldODE, EulerSimulator
@@ -280,6 +282,17 @@ simulator = EulerSimulator(ode)
 
 plot_generated_sample(path, simulator, num_timesteps = 1000)
 ```
+
+## U-Net
+
+U-Net is a convolutional neural network composed of downsampling encoder blocks, a middle module, and upsampling decoder blocks. In this implementation, we follow [Karras 2022's U-net design](https://github.com/lucidrains/denoising-diffusion-pytorch/blob/main/denoising_diffusion_pytorch/karras_unet.py#L183), where each encoder, middle module, and decoder is built from a stack of residual layers. A defining feature of U-Net is the use of skip connections between corresponding encoder and decoder layers. Full implementation details are available [here](https://github.com/bachvietdo01/generative_models/blob/main/unguided_mnist_fm/unet.py).
+
+<p align="center">
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a4_unet.png?raw=true" alt="eps100" width="190"/>
+<br>
+<em>U-Net Architecture. Image Credit: [Unpaired Deep Cross-Modality Synthesis with Fast Training](https://link.springer.com/chapter/10.1007/978-3-030-00889-5_18) /em>
+</p>
+
 
 ## Reference
 
