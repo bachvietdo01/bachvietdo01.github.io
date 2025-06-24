@@ -17,7 +17,7 @@ z \sim p_t(x \mid z) = N( \cdot \mid \alpha_t z \mid \beta_t^2 I)
 \end{align}
 $$
 
-This conditional path make intuitive senses as $t \to 1$, the Gaussian mean tends to $z$ and its variance tends to $0$. Moreover, it can be shown that the path $X_t \sim p_t$ is the solution to the ODE $\frac{d}{dt} X_t = u_t(X_t \mid z)$ in which the vector field has the form
+This conditional path make intuitive senses as $t \to 1$, the Gaussian mean tends to $z$ and its variance tends to $0$. Moreover, it can be shown that the trajectory path $X_t \sim p_t$ is the solution to the ODE $\frac{d}{dt} X_t = u_t(X_t \mid z)$ of which the vector field has the form
 
 $$
 \begin{align}
