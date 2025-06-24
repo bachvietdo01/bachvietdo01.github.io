@@ -9,7 +9,7 @@ image: a4_unguided_fm_mnist.gif
 
 In this post, we explore the Flow Matching model in a practical setting by building a generative model to produce MNIST-like images. It's recommended to review the [gentle introduction to Flow Matching](https://bachvietdo01.github.io/intro-to-flow-matching-models) first, as we’ll use similar techniques and code. The core idea of Flow Matching is to construct a probability path from an initial noise distribution to the target distribution—in this case, the distribution of MNIST images.
 
-To construct this path $X_0, \ldots, X_t, \ldots, X_1$, we first define a conditional path on the a single data sample $z$ with noise schedulers $\alpha_t \to 1$ and $\beta \to 1$ as $t \to 1$
+To construct this path $X_0, \ldots, X_t, \ldots, X_1$, we first define a conditional path on the a single data sample $z$ with noise schedulers $\alpha_t \to 1$ and $\beta_t \to 0$ as $t \to 1$
 
 $$
 \begin{align}
@@ -17,7 +17,7 @@ z \sim p_t(x \mid z) = N( \cdot \mid \alpha_t z \mid \beta_t^2 I)
 \end{align}
 $$
 
-It can be shown that the path $X_t \sim p_t$ is the solution to the ODE $\frac{d}{dt} X_t = u_t(X_t \mid z)$ in which the vector field has the form
+This conditional path make intuitive senses as $t \to 1$, the Gaussian mean tends to $z$ and its variance tends to $0$. Moreover, it can be shown that the path $X_t \sim p_t$ is the solution to the ODE $\frac{d}{dt} X_t = u_t(X_t \mid z)$ in which the vector field has the form
 
 $$
 \begin{align}
