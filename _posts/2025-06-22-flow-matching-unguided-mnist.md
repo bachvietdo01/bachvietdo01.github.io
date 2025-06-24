@@ -25,7 +25,7 @@ u_t(x \mid z) = \left ( \dot \alpha_t -  \cfrac{\dot \beta_t}{\beta_t} \alpha_t 
 \end{align}
 $$
 
-For each $z \sim p_{\text{data}}$, we have a vector field $u_t(\cdot |z)$. Remarkably, when taking the "average" of all those vector fields
+For each $z \sim p_{\text{data}}$, we have a vector field $u_t(\cdot \mid z)$. Remarkably, when taking the "average" of all those vector fields
 
 $$
 \begin{align}
@@ -283,10 +283,10 @@ simulator = EulerSimulator(ode)
 plot_generated_sample(path, simulator, num_timesteps = 1000)
 ```
 
-Here are generated sample from this procedure
+Here are a generated sample from this procedure,
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/bachvietdo01/generative_models/refs/heads/main/unguided_mnist_fm/asset/unguide_fminst_sample.png" alt="unet" width="600"/>
+<img src="https://raw.githubusercontent.com/bachvietdo01/generative_models/refs/heads/main/unguided_mnist_fm/asset/unguide_fminst_sample.png" alt="unet" width="500"/>
 <br>
 <em>Generated Samples from the learned ODE</em>
 </p>
@@ -298,7 +298,7 @@ U-Net is a convolutional neural network composed of downsampling encoder blocks,
 
 
 <p align="center">
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a4_unet.png?raw=true" alt="sample" width="900"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a4_unet.png?raw=true" alt="sample" width="1000"/>
 <br>
 <em>U-Net Architecture. Image Credit: Unpaired Deep Cross-Modality Synthesis with Fast Trainin</em>
 </p>
