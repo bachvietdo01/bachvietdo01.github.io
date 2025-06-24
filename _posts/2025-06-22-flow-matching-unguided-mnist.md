@@ -288,9 +288,9 @@ plot_generated_sample(path, simulator, num_timesteps = 1000)
 U-Net is a convolutional neural network composed of downsampling encoder blocks, a middle module, and upsampling decoder blocks. In this implementation, we follow [Karras 2022's U-net design](https://github.com/lucidrains/denoising-diffusion-pytorch/blob/main/denoising_diffusion_pytorch/karras_unet.py#L183), where each encoder, middle module, and decoder is built from a stack of residual layers. A defining feature of U-Net is the use of skip connections between corresponding encoder and decoder layers. Full implementation details are available [here](https://github.com/bachvietdo01/generative_models/blob/main/unguided_mnist_fm/unet.py).
 
 <p align="center">
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a4_unet.png?raw=true" alt="eps100" width="190"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a4_unet.png?raw=true" alt="unet" width="1000"/>
 <br>
-<em>U-Net Architecture. Image Credit: [Unpaired Deep Cross-Modality Synthesis with Fast Training](https://link.springer.com/chapter/10.1007/978-3-030-00889-5_18) /em>
+<em>U-Net Architecture. Image Credit: Unpaired Deep Cross-Modality Synthesis with Fast Trainin</em>
 </p>
 
 
