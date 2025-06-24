@@ -286,7 +286,7 @@ plot_generated_sample(path, simulator, num_timesteps = 1000)
 Here are generated sample from this procedure
 
 <p align="center">
-<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a4_unet.png?raw=true" alt="unet" width="1000"/>
+<img src="https://raw.githubusercontent.com/bachvietdo01/generative_models/refs/heads/main/unguided_mnist_fm/asset/unguide_fminst_sample.png" alt="unet" width="600"/>
 <br>
 <em>Generated Samples from the learned ODE</em>
 </p>
@@ -298,7 +298,7 @@ U-Net is a convolutional neural network composed of downsampling encoder blocks,
 
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/bachvietdo01/generative_models/refs/heads/main/unguided_mnist_fm/asset/unguide_fminst_sample.png" alt="sample" width="800"/>
+<img src="https://github.com/bachvietdo01/bachvietdo01.github.io/blob/main/assets/img/a4_unet.png?raw=true" alt="sample" width="900"/>
 <br>
 <em>U-Net Architecture. Image Credit: Unpaired Deep Cross-Modality Synthesis with Fast Trainin</em>
 </p>
