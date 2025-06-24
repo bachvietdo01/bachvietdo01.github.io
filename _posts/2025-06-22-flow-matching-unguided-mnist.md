@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b9cdecee-ff9b-40cb-82ac-74aec3c68ef7)---
+---
 layout: post
 title: "Flow Matching: (Unguided) Generative Models for MNIST images"
 author: "Bach Do"
