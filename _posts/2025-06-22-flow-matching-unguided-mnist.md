@@ -13,7 +13,7 @@ To construct this path $X_0, \ldots, X_t, \ldots, X_1$, we first define a condit
 
 $$
 \begin{align}
-z \sim p_t(x \mid z) = N( \cdot \mid \alpha_t z \mid \beta_t^2 I)
+z \sim p_t(x \mid z) = N( \cdot \mid \alpha_t z, \beta_t^2 I)
 \end{align}
 $$
 
