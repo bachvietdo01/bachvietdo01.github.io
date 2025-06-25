@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Gentle Intro to Diffusion Models"
+title: "A Gentle Intro to Diffusion Models: Stochastic FM Perspective"
 author: "Bach Do"
 categories: journal
 tags: [documentation,sample]
