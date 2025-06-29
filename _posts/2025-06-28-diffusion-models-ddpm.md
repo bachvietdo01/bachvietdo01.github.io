@@ -15,9 +15,13 @@ This posts gives a gentle introduction to diffusion models through the mainstrea
 
 ## Reference
 
-[1] Lipman, Y., Chen, R. T., Ben-Hamu, H., Nickel, M., & Le, M. (2022). Flow matching for generative modeling. arXiv preprint arXiv:2210.02747.
+[3] Sohl-Dickstein, Jascha, et al. "Deep unsupervised learning using nonequilibrium thermodynamics." International conference on machine learning. pmlr, 2015.
 
-[2] Holderrieth, Peter, and Ezra Erives. "An Introduction to Flow Matching and Diffusion Models." arXiv preprint arXiv:2506.02070 (2025).
+[4] Song, Yang, and Stefano Ermon. "Generative modeling by estimating gradients of the data distribution." Advances in neural information processing systems 32 (2019).
+
+[5] Ho, Jonathan, Ajay Jain, and Pieter Abbeel. "Denoising diffusion probabilistic models." Advances in neural information processing systems 33 (2020): 6840-6851.
+
+
 
 
 
