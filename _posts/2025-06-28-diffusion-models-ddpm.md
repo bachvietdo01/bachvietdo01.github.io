@@ -4,7 +4,7 @@ title: "Diffusion Models: Denoising Perspective"
 author: "Bach Do"
 categories: journal
 tags: [documentation,sample]
-image: a1_flowmatching_logo.gif
+image: a5_ddpm_butterflies.png
 ---
 
 Diffusion models have recently emerged as a powerful class of deep generative models, achieving state-of-the-art results in image generation, audio synthesis, protein design, and many scientific domains. Notable works in the literature include [Sohl-Dickstein et al. (2015)](https://arxiv.org/abs/1503.03585), [Song, Ermon et al. (2019)](https://arxiv.org/abs/1907.05600), [Ho et al. (2020)](https://arxiv.org/abs/2006.11239), [Song, Sohl-Dickstein et al. (2020)](https://arxiv.org/abs/2011.13456), and [Karras et al. (2022)](https://arxiv.org/abs/2206.00364). 
