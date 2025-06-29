@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Gentle Intro to Diffusion Models: Stochastic FM Perspective"
+title: "Diffusion Models: Stochastic Flow Matching Perspective"
 author: "Bach Do"
 categories: journal
 tags: [documentation,sample]
