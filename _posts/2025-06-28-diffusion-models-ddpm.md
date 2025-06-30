@@ -69,8 +69,7 @@ where
 
 $$
 \begin{align}
-\beta_t =  \cfrac{1 - \bar{\alpha}_{t-1}}{{1 - \bar{\alpha}_{t}} \cdot \beta_t  \\
-
+\beta_t =  \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_{t}} \cdot \beta_t  \\
 \end{align}
 $$
 
