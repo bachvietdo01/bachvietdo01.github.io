@@ -18,7 +18,14 @@ The core idea behind diffusion models is construct a transport path from a noise
 
 * **Forward process** constructs a Markov chain $x_0, x_1, \ldots, x_T$ using Gaussian transitions: $q(x_t \mid x_{t-1}) = \mathcal{N}(\cdot \mid \sqrt{1 - \beta_t} x_{t-1} \\; , \\; \beta_t I)$.
 
-* **Backward process** learns to reverse this chain through another Gaussian Markov process $p(x_{t-1} \mid x_t) = \mathcal{N}(\cdot \mid \mu_\theta(x_t, t) \\; , \\; \Sigma_\theta(x_t, t))$ where the mean and variance are learnable with parameter $\theta$.
+* **Backward process** learns to reverse this chain through another Gaussian Markov process $p(x_{t-1} \mid x_t) = \mathcal{N}(\cdot \mid \mu_\theta(x_t, t) \\; , \\; \Sigma_\theta(x_t, t))$ where the learnable mean and variance are parameterized by $\theta$.
+
+For the backward process to accurately reverse the forward process, we want to learn $\theta^*$ such that
+
+\[ \theta^* = \text{arg min} \text{KL}(q(x_0, x_1, \ldots, x_T) \\; , \\l p_{\theta}(x_0, x_1, \ldots, x_T)) \]
+
+Note that the model is in the 2nd argument of the KL and this is also know as the forward KL.
+
 
 
 ## Reference
