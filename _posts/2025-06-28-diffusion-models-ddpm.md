@@ -18,9 +18,9 @@ The core idea behind diffusion models is construct a transport path from a noise
 
 * **Forward process** constructs a Markov chain $x_0, x_1, \ldots, x_T$ using Gaussian transitions $q(x_t \mid x_{t-1}) = \mathcal{N}(\cdot \mid \sqrt{1 - \beta_t} x_{t-1} \\; , \\; \beta_t I)$ for $0 < \beta_t < 1$.
 
-* **Backward process** learns to <u>reverse the forward chain</u> through another Gaussian-transition Markov chain $p(x_{t-1} \mid x_t) = \mathcal{N}(\cdot \mid \mu_\theta(x_t, t) \\; , \\; \Sigma_\theta(x_t, t))$ where the learnable mean and variance are parameterized by $\theta$.
+* **Backward process** learns to reverse the forward chain through another Gaussian-transition Markov chain $p(x_{t-1} \mid x_t) = \mathcal{N}(\cdot \mid \mu_\theta(x_t, t) \\; , \\; \Sigma_\theta(x_t, t))$ where the learnable mean and variance are parameterized by $\theta$.
 
-For the backward process to accurately reverse the forward process, we want to learn $\theta^*$ such that
+The backward process is the path we want to construct taking a noise sample to a target data sample. To accurately reverse the forward process, we learn $\theta^*$ such that,
 
 $$
 \begin{align}
@@ -48,6 +48,17 @@ $$
 where $\epsilon \sim \text{N}(\cdot \mid 0, I)$ and $\alpha_t = 1 - \beta_t$ and $\bar{\alpha}_t = \prod_i \alpha_i$. 
 
 Because $1 - \beta_t \in (0,1)$, $\bar{\alpha}_t \to 0$ as $t \to \infty$. Therefore $x_t \to N(\cdot | 0, I)$ as $t \to \infty$. In other words, the forward process progressively diffuses data into Standard Gaussian noise. 
+
+Now, we can expand and rewrite $(2)$ as follows,
+
+$$
+\begin{align}
+(2) = L_T + \sum_{t=1}^{T-1} L_i + L_0
+\end{align}
+$$
+
+where $L_T = \text{KL}(q(x_T \mid x_0), p_{\theta}(x_T))$, $L_t = \text{KL}(q(x_t \mid x_{t+1}, x_0), p_{\theta}(x_t \mid x_{t+1}))$ and $L_0 = -\log p_{\theta}(x_0 \mid x_1)$.
+
 
 ## Reference
 
