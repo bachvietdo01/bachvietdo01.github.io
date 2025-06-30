@@ -28,8 +28,16 @@ $$
 \end{align}
 $$
 
-Note that the model $p_{\theta}$ is in the 2nd argument of the KL and this is also know as the forward KL.
+Note that the model $p_{\theta}$ is in the second argument of the KL, known as the forward KL, which differs from the typical reverse KL used in Variational Inference. Regarding the **Forward Process**, it is straightforward to derive the following using the fact that a sum of two Gaussians is also Gaussian,
 
+
+$$
+\begin{align}
+x_t \mid x_0 = \sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t \epsilon} 
+\end{align}
+$$
+
+where $\epsilon \sim \text{N}(\cdot \mid 0, I)$ and $\alpha_t = 1 - \beta_t$ and $\bar{\alpha}_t = \Prod_i \alpha_i$.
 
 
 ## Reference
