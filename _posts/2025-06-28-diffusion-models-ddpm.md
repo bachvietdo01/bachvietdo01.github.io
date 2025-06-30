@@ -24,11 +24,19 @@ For the backward process to accurately reverse the forward process, we want to l
 
 $$
 \begin{align}
-\theta^* = \text{arg } min_{\theta} \text{ KL}(q(x_0, x_1, \ldots, x_T) \\; , \\; p_{\theta}(x_0, x_1, \ldots, x_T))
+\theta^* = \text{arg } min_{\theta} \text{ KL}(q(x_0, x_1, \ldots, x_T) \\; , \\; p_{\theta}(x_0, x_1, \ldots, x_T)) \quad (2)
 \end{align}
 $$
 
-Note that the model $p_{\theta}$ is in the second argument of the KL, known as the forward KL, which differs from the typical reverse KL used in Variational Inference. Regarding the **Forward Process**, it is straightforward to derive the following using the fact that a sum of two Gaussians is also Gaussian,
+Note that the model $p_{\theta}$ is in the second argument of the KL, known as the forward KL, which differs from the typical reverse KL used in Variational Inference. Nevertheless, we can use Jensen Inequality to show that $(2)$ is lower bounded by log negavitve log likelihood under the model $p_{\theta}$,
+
+$$
+\begin{align}
+\text{ KL}(q(x_0, x_1, \ldots, x_T) \\; , \\; p_{\theta}(x_0, x_1, \ldots, x_T)) \ge E(-\log p_{\theta}(x_0)) + \text{const-free-of-}\theta
+\end{align}
+$$
+
+Regarding the **Forward Process**, it is straightforward to derive the following using the fact that a sum of two Gaussians is also Gaussian,
 
 
 $$
