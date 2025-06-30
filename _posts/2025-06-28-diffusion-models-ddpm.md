@@ -57,7 +57,13 @@ $$
 \end{align}
 $$
 
-where $L_T = \text{KL}(q(x_T \mid x_0), p_{\theta}(x_T))$, $L_t = \text{KL}(q(x_t \mid x_{t+1}, x_0), p_{\theta}(x_t \mid x_{t+1}))$ and $L_0 = -\log p_{\theta}(x_0 \mid x_1)$.
+where $L_T = \text{KL}(q(x_T \mid x_0), p_{\theta}(x_T))$, $L_t = \text{KL}(q(x_t \mid x_{t+1}, x_0), p_{\theta}(x_t \mid x_{t+1}))$ and $L_0 = -\log p_{\theta}(x_0 \mid x_1)$. Moreover, by using conjacy of Gaussian, we can derive that,
+
+$$
+\begin{align}
+q(x_t \mid x_{t+1}, x_0) = \text{N}(\cdot | \tilde{\mu}_{t,0} , \tilde{\beta}_t I )
+\end{align}
+$$
 
 
 ## Reference
