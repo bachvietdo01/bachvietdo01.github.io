@@ -37,7 +37,7 @@ x_t \mid x_0 = \sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t \epsilon}
 \end{align}
 $$
 
-where $\epsilon \sim \text{N}(\cdot \mid 0, I)$ and $\alpha_t = 1 - \beta_t$ and $\bar{\alpha}_t = \Prod_i \alpha_i$.
+where $\epsilon \sim \text{N}(\cdot \mid 0, I)$ and $\alpha_t = 1 - \beta_t$ and $\bar{\alpha}_t = \Pi_i \alpha_i$.
 
 
 ## Reference
