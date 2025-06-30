@@ -33,7 +33,7 @@ Note that the model $p_{\theta}$ is in the second argument of the KL, known as t
 
 $$
 \begin{align}
-x_t \mid x_0 = \sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t \epsilon} 
+x_t \mid x_0 = \sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon
 \end{align}
 $$
 
