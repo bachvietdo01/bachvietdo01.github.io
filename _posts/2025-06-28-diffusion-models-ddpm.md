@@ -16,15 +16,15 @@ Previously, I explored Diffusion Models through the lens of [Stochastic Flow Mat
 
 The core idea behind diffusion models is construct a transport path from a noise distribution to a target data distribution. [Ho et al. (2020)](https://arxiv.org/abs/2006.11239) proposed a framework to achieve this with a forward and a backward process. Starting from a data point $x_0 \sim p_{\text{data}}(x)$,
 
-* **Forward process** constructs a Markov chain $x_0, x_1, \ldots, x_T$ using Gaussian transitions $q(x_t \mid x_{t-1}) = \mathcal{N}(\cdot \mid \sqrt{1 - \beta_t} x_{t-1} \\; , \\; \beta_t I)$ for $0 < \beta_t < 1$.
+* **Forward process** constructs a Markov chain $x_0, x_1, \ldots, x_T$ using Gaussian transitions $q(x_t \mid x_{t-1}) = \mathcal{N}(\cdot \mid \sqrt{1 - \beta_t} x_{t-1} , \beta_t I)$ for $0 < \beta_t < 1$.
 
-* **Backward process** learns to reverse the forward chain through another Gaussian-transition Markov chain $p(x_{t-1} \mid x_t) = \mathcal{N}(\cdot \mid \mu_\theta(x_t, t) \\; , \\; \Sigma_\theta(x_t, t))$ where the learnable mean and variance are parameterized by $\theta$.
+* **Backward process** learns to reverse the forward chain through another Gaussian-transition Markov chain $p(x_{t-1} \mid x_t) = \mathcal{N}(\cdot \mid \mu_\theta(x_t, t) , \Sigma_\theta(x_t, t))$ where the learnable mean and variance are parameterized by $\theta$.
 
 The backward process is the path we want to construct taking a noise sample to a target data sample. To accurately reverse the forward process, we learn $\theta^*$ such that,
 
 $$
 \begin{align}
-\theta^* = \text{arg } min_{\theta} \text{ KL}(q(x_0, x_1, \ldots, x_T) \\; , \\; p_{\theta}(x_0, x_1, \ldots, x_T)) \quad (2)
+\theta^* = \text{arg } min_{\theta} \text{ KL}(q(x_0, x_1, \ldots, x_T), p_{\theta}(x_0, x_1, \ldots, x_T)) \quad (2)
 \end{align}
 $$
 
@@ -32,7 +32,7 @@ Note that the model $p_{\theta}$ is in the second argument of the KL, known as t
 
 $$
 \begin{align}
-\text{ KL}(q(x_0, x_1, \ldots, x_T) \\; , \\; p_{\theta}(x_0, x_1, \ldots, x_T)) \ge E(-\log p_{\theta}(x_0)) + \text{const-free-of-}\theta
+\text{ KL}(q(x_0, x_1, \ldots, x_T), p_{\theta}(x_0, x_1, \ldots, x_T)) \ge E(-\log p_{\theta}(x_0)) + \text{const-free-of-}\theta
 \end{align}
 $$
 
