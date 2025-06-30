@@ -69,7 +69,8 @@ where
 
 $$
 \begin{align}
-\beta_t =  \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_t} \cdot \beta_t  \\
+\tilde{\beta}_t &=  \cfrac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_t} \cdot \beta_t  \\
+\mu_{t,0} &= \cfrac{\sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t} x_t
 \end{align}
 $$
 
