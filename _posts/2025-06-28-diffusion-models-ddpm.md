@@ -7,9 +7,9 @@ tags: [documentation,sample]
 image: a5_ddpm_butterflies.png
 ---
 
-Diffusion models have recently emerged as a powerful class of deep generative models, achieving state-of-the-art results in image generation, audio synthesis, protein design, and many scientific domains. Notable works in the literature include [Sohl-Dickstein et al. (2015)](https://arxiv.org/abs/1503.03585), [Song, Ermon et al. (2019)](https://arxiv.org/abs/1907.05600), [Ho et al. (2020)](https://arxiv.org/abs/2006.11239), [Song, Sohl-Dickstein et al. (2020)](https://arxiv.org/abs/2011.13456), and [Karras et al. (2022)](https://arxiv.org/abs/2206.00364). 
+Diffusion models are a powerful class of deep generative models, breaking the long-standing dominance of generative adversarial networks (GANs). Key developments in the literature include works such as [Sohl-Dickstein et al. (2015)](https://arxiv.org/abs/1503.03585), [Song and Ermon (2019)](https://arxiv.org/abs/1907.05600), [Ho et al. (2020)](https://arxiv.org/abs/2006.11239), [Song and Sohl-Dickstein et al. (2020)](https://arxiv.org/abs/2011.13456), and [Karras et al. (2022)](https://arxiv.org/abs/2206.00364).
 
-This posts gives a gentle introduction to diffusion models through the mainstream viewpoint of denoising diffusion models (DDMs). Over the past five years, DDMs have gained significant popularity, with many available implementations. Instead of building one from scratch, we’ll use Diffusers, a powerful Python library from HuggingFace, to creat a DDPM for generating butterfly images. Readers who want to see an implementation from scratch can refer to this [post](https://bachvietdo01.github.io/intro-diffusion-models).
+Previously, I explored Diffusion Models through the lens of [Stochastic Flow Matching](https://bachvietdo01.github.io/intro-diffusion-models), controlled by stochastic differential equations (SDEs). THis posts provides a different and the mainstream perspective of denoising diffusion models (DDMs). Over the past five years, DDMs have grown immensely popular, with many open-source implementations available. Rather than building one from scratch, we'll use Diffusers, a powerful Python library from HuggingFace, to create a DDPM that generates butterfly images. For those interested in a from-scratch implementation, see the [post](https://bachvietdo01.github.io/intro-diffusion-models).
 
 
 
