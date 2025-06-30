@@ -24,7 +24,7 @@ For the backward process to accurately reverse the forward process, we want to l
 
 $$
 \begin{align}
-\theta^* = \text{arg min} \text{KL}(q(x_0, x_1, \ldots, x_T) \\; , \\l p_{\theta}(x_0, x_1, \ldots, x_T))
+\theta^* = \text{arg min} \text{KL}(q(x_0, x_1, \ldots, x_T) \\; , \\; p_{\theta}(x_0, x_1, \ldots, x_T))
 \end{align}
 $$
 
