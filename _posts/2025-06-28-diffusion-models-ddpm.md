@@ -16,7 +16,7 @@ Previously, I explored Diffusion Models through the lens of [Stochastic Flow Mat
 
 The core idea behind diffusion models is construct a transport path from a noise distribution to a target data distribution. [Ho et al. (2020)](https://arxiv.org/abs/2006.11239) proposed a framework to achieve this with a forward and a backward process. Starting from a data point $x_0 \sim p_{\text{data}}(x)$,
 
-* **Forward process** constructs a Markov chain $x_0, x_1, \ldots, x_T$ using Gaussian transitions $$`q(x_t \mid x_{t-1}) = \mathcal{N}(\cdot \mid \sqrt{1 - \beta_t} x_{t-1} \; , \; \beta_t I)`$$ for $0 < \beta_t < 1$.
+* **Forward process** constructs a Markov chain $x_0, x_1, \ldots, x_T$ using Gaussian transitions $$q(x_t \mid x_{t-1}) = \mathcal{N}(\cdot \mid \sqrt{1 - \beta_t} x_{t-1}, \beta_t I)$$ for $0 < \beta_t < 1$.
 
 * **Backward process** learns to reverse the forward chain through another Gaussian-transition Markov chain $p(x_{t-1} \mid x_t) = \mathcal{N}(\cdot \mid \mu_\theta(x_t, t) , \Sigma_\theta(x_t, t))$ where the learnable mean and variance are parameterized by $\theta$.
 
@@ -62,6 +62,15 @@ where $L_T = \text{KL}(q(x_T \mid x_0), p_{\theta}(x_T))$, $L_t = \text{KL}(q(x_
 $$
 \begin{align}
 q(x_t \mid x_{t+1}, x_0) = \text{N}(\cdot | \tilde{\mu}_{t,0} , \tilde{\beta}_t I )
+\end{align}
+$$
+
+where
+
+$$
+\begin{align}
+\tilde{\beta}_t &=  \cfrac{1 - \bar{\alpha}_{t-1}}{{1 - \bar{\alpha}_{t}} \cdot \beta_t  \\
+\mu_{t,0} &= \cfrac{ \sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1}) }{{1 - \bar{\alpha}_{t}} x_t  + \cfrac{\sqrt{\bar{\alpha}_t} \beta_t}{1 - \bar{\alpha}_t} x_0
 \end{align}
 $$
 
