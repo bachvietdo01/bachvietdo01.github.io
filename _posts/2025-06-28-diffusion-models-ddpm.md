@@ -32,7 +32,7 @@ where $\epsilon_t \sim \text{N}(\cdot \mid 0, I)$ and $\alpha_t = 1 - \beta_t$ a
 
 Because $1 - \beta_t \in (0,1)$, $\bar{\alpha}_t \to 0$ as $t \to \infty$. Therefore $x_t \to N(\cdot \mid 0, I)$ as $t \to \infty$. In other words, the forward process progressively diffuses data into Standard Gaussian noise. 
 
-On the other hand, the backward process is the path we want to construct taking a noise sample to a target data sample. To accurately reverse the forward process, we learn $\theta^*$ such that,
+On the other hand, the backward process is the transport path that we want to construct. To accurately reverse the forward process, we learn $\theta^*$ such that,
 
 $$
 \begin{align}
