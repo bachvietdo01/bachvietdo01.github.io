@@ -20,7 +20,19 @@ The core idea behind diffusion models is construct a transport path from a noise
 
 * **Backward process** learns to reverse the forward chain through another Gaussian-transition Markov chain $p(x_{t-1} \mid x_t) = \mathcal{N}(\cdot \mid \mu_\theta(x_t, t) , \Sigma_\theta(x_t, t))$ where the learnable mean and variance are parameterized by $\theta$.
 
-The backward process is the path we want to construct taking a noise sample to a target data sample. To accurately reverse the forward process, we learn $\theta^*$ such that,
+Regarding the **Forward Process**, it is straightforward to derive the following using the fact that a sum of two Gaussians is also Gaussian,
+
+$$
+\begin{align}
+x_t \mid x_0 = \sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon_t
+\end{align}
+$$
+
+where $\epsilon_t \sim \text{N}(\cdot \mid 0, I)$ and $\alpha_t = 1 - \beta_t$ and $\bar{\alpha}_t = \prod_i \alpha_i$. 
+
+Because $1 - \beta_t \in (0,1)$, $\bar{\alpha}_t \to 0$ as $t \to \infty$. Therefore $x_t \to N(\cdot \mid 0, I)$ as $t \to \infty$. In other words, the forward process progressively diffuses data into Standard Gaussian noise. 
+
+On the other hand, the backward process is the path we want to construct taking a noise sample to a target data sample. To accurately reverse the forward process, we learn $\theta^*$ such that,
 
 $$
 \begin{align}
@@ -36,18 +48,7 @@ $$
 \end{align}
 $$
 
-Thus minizing the KL will push down the negative log likelihood or equivalently increase the log likelihood. Regarding the **Forward Process**, it is straightforward to derive the following using the fact that a sum of two Gaussians is also Gaussian,
-
-
-$$
-\begin{align}
-x_t \mid x_0 = \sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon_t
-\end{align}
-$$
-
-where $\epsilon_t \sim \text{N}(\cdot \mid 0, I)$ and $\alpha_t = 1 - \beta_t$ and $\bar{\alpha}_t = \prod_i \alpha_i$. 
-
-Because $1 - \beta_t \in (0,1)$, $\bar{\alpha}_t \to 0$ as $t \to \infty$. Therefore $x_t \to N(\cdot \mid 0, I)$ as $t \to \infty$. In other words, the forward process progressively diffuses data into Standard Gaussian noise. 
+Thus minizing the KL will push down the negative log likelihood or equivalently increase the log likelihood. 
 
 Now, we can expand and rewrite $(2)$ as follows,
 
