@@ -16,9 +16,9 @@ Previously, I explored Diffusion Models through the lens of [Stochastic Flow Mat
 
 The core idea behind diffusion models is construct a transport path from a noise distribution to a target data distribution. [Ho et al. (2020)](https://arxiv.org/abs/2006.11239) proposed a framework to achieve this with a forward and a backward process. Starting from a data point $x_0 \sim p_{\text{data}}(x)$,
 
-* **Forward process** constructs a Markov chain $x_0, x_1, \ldots, x_T$ using Gaussian transitions: $q(x_t \mid x_{t-1}) = \mathcal{N}(\cdot \mid \sqrt{1 - \beta_t} x_{t-1} \\; , \\; \beta_t I)$ for $0 < \beta_t < 1$.
+* **Forward process** constructs a Markov chain $x_0, x_1, \ldots, x_T$ using Gaussian transitions $q(x_t \mid x_{t-1}) = \mathcal{N}(\cdot \mid \sqrt{1 - \beta_t} x_{t-1} \\; , \\; \beta_t I)$ for $0 < \beta_t < 1$.
 
-* **Backward process** learns to **reverse** the forward chain through another Gaussian Markov process $p(x_{t-1} \mid x_t) = \mathcal{N}(\cdot \mid \mu_\theta(x_t, t) \\; , \\; \Sigma_\theta(x_t, t))$ where the learnable mean and variance are parameterized by $\theta$.
+* **Backward process** learns to <u>reverse the forward chain</u> through another Gaussian-transition Markov chain $p(x_{t-1} \mid x_t) = \mathcal{N}(\cdot \mid \mu_\theta(x_t, t) \\; , \\; \Sigma_\theta(x_t, t))$ where the learnable mean and variance are parameterized by $\theta$.
 
 For the backward process to accurately reverse the forward process, we want to learn $\theta^*$ such that
 
