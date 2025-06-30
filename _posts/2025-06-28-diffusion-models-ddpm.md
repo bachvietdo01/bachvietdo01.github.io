@@ -36,7 +36,7 @@ $$
 \end{align}
 $$
 
-Regarding the **Forward Process**, it is straightforward to derive the following using the fact that a sum of two Gaussians is also Gaussian,
+Thus minizing the KL will push down the negative log likelihood or equivalently increase the log likelihood. Regarding the **Forward Process**, it is straightforward to derive the following using the fact that a sum of two Gaussians is also Gaussian,
 
 
 $$
