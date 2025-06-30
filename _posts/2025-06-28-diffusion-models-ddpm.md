@@ -28,7 +28,7 @@ $$
 \end{align}
 $$
 
-Note that the model $p_{\theta}$ is in the second argument of the KL, known as the forward KL, which differs from the typical reverse KL used in Variational Inference. Nevertheless, we can use Jensen Inequality to show that $(2)$ is lower bounded by log negavitve log likelihood under the model $p_{\theta}$,i.e.,
+Note that the model $p_{\theta}$ is in the second argument of the KL, known as the forward KL, which differs from the typical reverse KL used in Variational Inference. Nevertheless, we can use Jensen Inequality to show that $(2)$ is lower bounded by log negavitve log likelihood under the model $p_{\theta}$, i.e.,
 
 $$
 \begin{align}
