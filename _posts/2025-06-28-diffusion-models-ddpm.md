@@ -22,9 +22,13 @@ The core idea behind diffusion models is construct a transport path from a noise
 
 For the backward process to accurately reverse the forward process, we want to learn $\theta^*$ such that
 
-\[ \theta^* = \text{arg min} \text{KL}(q(x_0, x_1, \ldots, x_T) \\; , \\l p_{\theta}(x_0, x_1, \ldots, x_T)) \]
+$$
+\begin{align}
+\theta^* = \text{arg min} \text{KL}(q(x_0, x_1, \ldots, x_T) \\; , \\l p_{\theta}(x_0, x_1, \ldots, x_T))
+\end{align}
+$$
 
-Note that the model is in the 2nd argument of the KL and this is also know as the forward KL.
+Note that the model $p_{\theta}$ is in the 2nd argument of the KL and this is also know as the forward KL.
 
 
 
