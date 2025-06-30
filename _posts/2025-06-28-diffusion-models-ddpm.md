@@ -12,6 +12,10 @@ Diffusion models are a powerful class of deep generative models, breaking the lo
 Previously, I explored Diffusion Models through the lens of [Stochastic Flow Matching](https://bachvietdo01.github.io/intro-diffusion-models), controlled by stochastic differential equations (SDEs). THis posts provides a different and the mainstream perspective of denoising diffusion models (DDMs). Over the past five years, DDMs have grown immensely popular, with many open-source implementations available. Rather than building one from scratch, we'll use Diffusers, a powerful Python library from HuggingFace, to build a generative model which can generate butterfly images. For those interested in a from-scratch implementation, see the [post](https://bachvietdo01.github.io/intro-diffusion-models).
 
 
+# Denoising with Markov Chain
+
+
+
 
 ## Reference
 
